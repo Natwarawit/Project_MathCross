@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmvsywjqs64lu"]
+
+[ext_resource type="Script" uid="uid://cpr7kbbeuc83m" path="res://level/mathcross_level_1.gd" id="1_rb6bi"]
+[ext_resource type="Texture2D" uid="uid://dtan6l8e8bdcc" path="res://image/GUI.png" id="2_gwmg1"]
+[ext_resource type="FontFile" uid="uid://cmabas1nbtgcr" path="res://font/PressStart2P.ttf" id="2_xvyuj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvyuj"]
+texture = ExtResource("2_gwmg1")
+region_rect = Rect2(113, 81, 30, 14)
+
+[sub_resource type="Theme" id="Theme_bt32v"]
+default_font = ExtResource("2_xvyuj")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("2_xvyuj")
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource("StyleBoxTexture_xvyuj")
+Button/styles/pressed = null
+
+[node name="mathcross_level1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_rb6bi")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 20.0
+offset_right = 219.0
+offset_bottom = 192.0
+scale = Vector2(0.404011, 0.361453)
+theme = SubResource("Theme_bt32v")
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 21.25
+offset_top = 208.75
+offset_right = 437.25
+offset_bottom = 277.75
+rotation = -3.14173
+scale = Vector2(-0.5, -0.5)
+
+[node name="ImportQuestion" type="HTTPRequest" parent="."]
+
+[node name="ImportChoice" type="HTTPRequest" parent="."]
+
+[node name="ImportCheckHorizontal" type="HTTPRequest" parent="."]
+
+[node name="ImportCheckVertical" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="ImportQuestion" to="." method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="ImportChoice" to="." method="_on_http_request_2_request_completed"]
+[connection signal="request_completed" from="ImportCheckHorizontal" to="." method="_on_import_check_horizontal_request_completed"]
+[connection signal="request_completed" from="ImportCheckVertical" to="." method="_on_import_check_vertical_request_completed"]

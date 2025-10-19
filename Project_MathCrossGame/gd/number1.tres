@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cd80i5004p618"]
+
+[ext_resource type="Texture2D" uid="uid://cwe1x77cvaq3p" path="res://drop_numbers/number1.png" id="1_78sm6"]
+[ext_resource type="Script" uid="uid://cs184icnao42g" path="res://gd/item_resource.gd" id="1_o8c8s"]
+
+[resource]
+script = ExtResource("1_o8c8s")
+name = "Number1"
+description = ""
+icon = ExtResource("1_78sm6")
+inventarSlot = "Keybar"
+inventarPosition = 0
+metadata/_custom_type_script = "uid://cs184icnao42g"

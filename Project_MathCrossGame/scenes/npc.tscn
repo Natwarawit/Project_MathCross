@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://ducwe5opu4rem"]
+
+[ext_resource type="Script" uid="uid://dw6kf2ndwkx1p" path="res://scripts/npc.gd" id="1_abqhh"]
+[ext_resource type="Texture2D" uid="uid://eqmnimbjpfvv" path="res://art_animation/characters/player.png" id="1_nh2m4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abqhh"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(0, 53, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv78h"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(48, 53, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n8xq"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(96, 53, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wlns"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(144, 53, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl2vt"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(192, 53, 48, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwkja"]
+atlas = ExtResource("1_nh2m4")
+region = Rect2(240, 53, 48, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0tygy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abqhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv78h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n8xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wlns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl2vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwkja")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sptji"]
+size = Vector2(41.2253, 38.578)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_abqhh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.38735, -9.289)
+
+[node name="NPC" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -9.7672)
+sprite_frames = SubResource("SpriteFrames_0tygy")
+animation = &"idle"
+
+[node name="NPC_Area" type="Area2D" parent="NPC"]
+position = Vector2(4.76837e-07, 1.54901)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/NPC_Area"]
+position = Vector2(-0.61265, -1.07081)
+shape = SubResource("RectangleShape2D_sptji")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -83.0
+offset_top = -51.0
+offset_right = 1.0
+offset_bottom = -14.0
+theme_override_font_sizes/font_size = 12
+text = "พร้อมแล้วสินะ 
+(กด F เพื่อตกลง)"
+
+[connection signal="body_entered" from="NPC/NPC_Area" to="." method="_on_npc_area_body_entered"]
+[connection signal="body_exited" from="NPC/NPC_Area" to="." method="_on_npc_area_body_exited"]

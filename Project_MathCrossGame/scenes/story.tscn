@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://dun0ua6n0pk45"]
+
+[ext_resource type="Script" uid="uid://kjqxbywq3ktg" path="res://gd/Story.gd" id="1_md1pp"]
+[ext_resource type="Texture2D" uid="uid://kruwy10cha6q" path="res://image/Screenshot 2025-03-26 233145.png" id="3_of347"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="5_of347"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qewql"]
+font = ExtResource("5_of347")
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3kdc3"]
+font = ExtResource("5_of347")
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Story" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2460.0
+offset_bottom = 1404.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.29, 0.286)
+script = ExtResource("1_md1pp")
+
+[node name="Background8Bit" type="Sprite2D" parent="."]
+position = Vector2(1062.07, 1000.27)
+scale = Vector2(2.89855, 2.90618)
+texture = ExtResource("3_of347")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 427.0
+offset_right = 1386.0
+offset_bottom = 781.0
+
+[node name="StoryLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 103.448
+offset_top = 447.552
+offset_right = 879.448
+offset_bottom = 688.552
+scale = Vector2(0.885409, 0.731875)
+label_settings = SubResource("LabelSettings_qewql")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1255.17
+offset_top = 723.776
+offset_right = 1378.17
+offset_bottom = 772.776
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 6.0
+offset_right = 87.0
+offset_bottom = 59.0
+text = "ข้าม"
+label_settings = SubResource("LabelSettings_3kdc3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

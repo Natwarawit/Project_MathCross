@@ -1,0 +1,226 @@
+[gd_scene load_steps=9 format=3 uid="uid://kyhgiprrtov2"]
+
+[ext_resource type="Script" uid="uid://le73efcyhfuf" path="res://scripts/how_to_play.gd" id="1_xkrkv"]
+[ext_resource type="Texture2D" uid="uid://dh2r44fvv6tlh" path="res://image/Screenshot 2025-03-27 003332.png" id="2_xkrkv"]
+[ext_resource type="Texture2D" uid="uid://ex6jcwh7i1kr" path="res://image/mouse-buttons-click-icons-left-260nw-1953635287-removebg-preview (4).png" id="3_m8x0n"]
+[ext_resource type="Texture2D" uid="uid://hcweodvqh8ym" path="res://image/mouse-buttons-click-icons-left-260nw-1953635287-removebg-preview (3).png" id="4_crhno"]
+[ext_resource type="Texture2D" uid="uid://cq20j1tibfn5y" path="res://image/Screenshot 2025-10-12 035425.png" id="5_crhno"]
+[ext_resource type="AudioStream" uid="uid://xpore1cu3d3e" path="res://sound/Button Click - Sound Effect (mp3cut.net).mp3" id="5_wi5qh"]
+[ext_resource type="Texture2D" uid="uid://1naxh48tu7a6" path="res://image/Screenshot 2025-10-12 035410.png" id="8_xqkvd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p0jrq"]
+font_size = 30
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+
+[node name="howtoplay" type="Node2D"]
+scale = Vector2(0.312, 0.36)
+script = ExtResource("1_xkrkv")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(763.038, 388.026)
+scale = Vector2(1.44296, 1.06542)
+texture = ExtResource("2_xkrkv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.686275)
+offset_left = 140.872
+offset_top = 44.0
+offset_right = 1291.87
+offset_bottom = 563.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 423.231
+offset_top = -13.4444
+offset_right = 687.231
+offset_bottom = 69.5556
+theme_override_font_sizes/font_size = 60
+text = "วิธีการเล่น"
+
+[node name="Panel5" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 269.889
+offset_right = 442.0
+offset_bottom = 311.889
+
+[node name="Label" type="Label" parent="ColorRect/Panel5"]
+layout_mode = 0
+offset_left = 6.41026
+offset_top = -2.77779
+offset_right = 409.41
+offset_bottom = 39.2222
+theme_override_font_sizes/font_size = 30
+text = "🅵 | เปิดกล่อง/ร้านค้า/เลือกด่าน"
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 78.2222
+offset_right = 321.0
+offset_bottom = 122.222
+
+[node name="Label" type="Label" parent="ColorRect/Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.22222
+offset_right = 388.0
+offset_bottom = 40.7778
+theme_override_font_sizes/font_size = 30
+text = "🆆🅰🆂🅳 | ปุ่มเคลื่อนที่"
+
+[node name="Panel4" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 219.667
+offset_right = 170.0
+offset_bottom = 266.667
+
+[node name="Label" type="Label" parent="ColorRect/Panel4"]
+layout_mode = 0
+offset_left = 6.41026
+offset_top = 2.28882e-05
+offset_right = 144.41
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 30
+text = "🆁 | ใช้ธนู"
+
+[node name="Panel2" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 125.444
+offset_right = 333.0
+offset_bottom = 167.444
+
+[node name="Label" type="Label" parent="ColorRect/Panel2"]
+layout_mode = 0
+offset_left = 3.05127
+offset_top = -3.22224
+offset_right = 299.051
+offset_bottom = 38.7778
+theme_override_font_sizes/font_size = 30
+text = "🅸 | ปุ่มเปิดช่องเก็บของ"
+
+[node name="Panel8" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 78.0
+offset_right = 1128.0
+offset_bottom = 500.0
+
+[node name="Label3" type="Label" parent="ColorRect/Panel8"]
+layout_mode = 0
+offset_left = 2.84616
+offset_top = -5.33333
+offset_right = 339.846
+offset_bottom = 36.6667
+theme_override_font_sizes/font_size = 30
+text = "การเติมตัวเลขลงในตาราง"
+
+[node name="Label2" type="Label" parent="ColorRect/Panel8"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 281.0
+offset_right = 539.0
+offset_bottom = 458.0
+theme_override_font_sizes/font_size = 30
+text = "ผู้เล่นจะตามหาตัวเลขมาเติมลงในตาราง 
+โดยการเติมผู้เล่นต้องคลิกจากช่องเก็บของ
+เพื่อวางลงในตาราง
+"
+
+[node name="Panel7" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 378.0
+offset_right = 269.0
+offset_bottom = 434.0
+
+[node name="Label" type="Label" parent="ColorRect/Panel7"]
+layout_mode = 0
+offset_left = 48.0769
+offset_top = 2.77778
+offset_right = 233.077
+offset_bottom = 50.7778
+theme_override_font_sizes/font_size = 30
+text = "| โจมตีด้วยธนู"
+
+[node name="Mouse-buttons-click-icons-left-260Nw-1953635287-removebg-preview(4)" type="Sprite2D" parent="ColorRect/Panel7"]
+position = Vector2(25.641, 30.5556)
+scale = Vector2(0.580143, 0.43485)
+texture = ExtResource("3_m8x0n")
+
+[node name="Panel6" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 316.889
+offset_right = 490.0
+offset_bottom = 372.889
+
+[node name="Label" type="Label" parent="ColorRect/Panel6"]
+layout_mode = 0
+offset_left = 48.0769
+offset_top = 2.77781
+offset_right = 456.077
+offset_bottom = 50.7778
+theme_override_font_sizes/font_size = 30
+text = "| โจมตี/คลิกตัวเลขเติมลงตาราง"
+
+[node name="Mouse-buttons-click-icons-left-260Nw-1953635287-removebg-preview(3)2" type="Sprite2D" parent="ColorRect/Panel6"]
+position = Vector2(25.641, 30.5556)
+scale = Vector2(0.558642, 0.435775)
+texture = ExtResource("4_crhno")
+
+[node name="Panel3" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 172.444
+offset_right = 215.0
+offset_bottom = 216.444
+
+[node name="Label" type="Label" parent="ColorRect/Panel3"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -2.33334
+offset_right = 175.0
+offset_bottom = 39.6667
+theme_override_font_sizes/font_size = 30
+text = "🅴 | สกิลต่อสู้"
+
+[node name="Screenshot2025-10-12035425" type="Sprite2D" parent="ColorRect"]
+position = Vector2(986.152, 239.687)
+scale = Vector2(0.637459, 0.52816)
+texture = ExtResource("5_crhno")
+
+[node name="Screenshot2025-10-12035410" type="Sprite2D" parent="ColorRect"]
+position = Vector2(703.281, 240.736)
+scale = Vector2(0.661094, 0.535487)
+texture = ExtResource("8_xqkvd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 733.974
+offset_top = 27.7778
+offset_right = 865.974
+offset_bottom = 69.7778
+
+[node name="Button" type="Button" parent="."]
+offset_left = 74.0
+offset_top = 594.0
+offset_right = 218.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 15.7436
+offset_top = 3.2222
+offset_right = 127.744
+offset_bottom = 45.2222
+text = "ย้อนกลับ"
+label_settings = SubResource("LabelSettings_p0jrq")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wi5qh")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

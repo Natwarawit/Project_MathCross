@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://clm0qt4nrhj0c"]
+
+[ext_resource type="Script" uid="uid://pvyfv31nvh3v" path="res://scripts/storyendlevel1.gd" id="1_3dt5b"]
+[ext_resource type="Texture2D" uid="uid://dh2r44fvv6tlh" path="res://image/Screenshot 2025-03-27 003332.png" id="2_anwpa"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="4_qq3dg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfp08"]
+font = ExtResource("4_qq3dg")
+font_size = 15
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8mf84"]
+font = ExtResource("4_qq3dg")
+font_size = 12
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="storyendlevel1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3dt5b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(157, 224)
+scale = Vector2(0.674669, 0.727194)
+texture = ExtResource("2_anwpa")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 138.0
+offset_right = 402.0
+offset_bottom = 228.0
+
+[node name="StoryLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 143.0
+offset_right = 430.0
+offset_bottom = 244.0
+scale = Vector2(0.885409, 0.731875)
+label_settings = SubResource("LabelSettings_nfp08")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 205.0
+offset_right = 394.0
+offset_bottom = 223.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 1.0
+offset_right = 32.0
+offset_bottom = 18.0
+text = "ข้าม"
+label_settings = SubResource("LabelSettings_8mf84")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

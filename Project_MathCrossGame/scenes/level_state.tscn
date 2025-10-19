@@ -1,0 +1,242 @@
+[gd_scene load_steps=9 format=3 uid="uid://bw8s87jvqe7ao"]
+
+[ext_resource type="Script" uid="uid://c8rrw8no7eiy3" path="res://scripts/level_state.gd" id="1_o0qcr"]
+[ext_resource type="Texture2D" uid="uid://diio0outafak6" path="res://image/Map (3).png" id="2_4dndl"]
+[ext_resource type="FontFile" uid="uid://cmabas1nbtgcr" path="res://font/PressStart2P.ttf" id="3_8x648"]
+[ext_resource type="Texture2D" uid="uid://dk4qrd4tjt51l" path="res://image/chain.png" id="5_427vf"]
+[ext_resource type="Texture2D" uid="uid://tn30uhvildb6" path="res://image/1.png" id="5_nlgam"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kiiso"]
+font = ExtResource("3_8x648")
+font_size = 21
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4dndl"]
+font = ExtResource("3_8x648")
+font_size = 21
+
+[sub_resource type="LabelSettings" id="LabelSettings_esada"]
+font = ExtResource("3_8x648")
+font_size = 21
+
+[node name="Level State" type="Node2D"]
+script = ExtResource("1_o0qcr")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -130.0
+offset_top = -90.0
+offset_right = 872.0
+offset_bottom = 523.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(367.286, 211)
+scale = Vector2(0.509325, 0.436312)
+texture = ExtResource("2_4dndl")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 53.0
+
+[node name="Label" type="Label" parent="Back"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 5.0
+offset_right = 108.0
+offset_bottom = 45.0
+text = "ย้อนกลับ"
+label_settings = SubResource("LabelSettings_kiiso")
+
+[node name="Level1Button" type="Button" parent="."]
+offset_left = 82.0
+offset_top = 101.0
+offset_right = 129.0
+offset_bottom = 148.0
+text = "
+"
+
+[node name="Label" type="Label" parent="Level1Button"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 34.0
+offset_bottom = 38.0
+text = "1"
+label_settings = SubResource("LabelSettings_4dndl")
+
+[node name="Level2Button" type="Button" parent="."]
+offset_left = 137.0
+offset_top = 237.0
+offset_right = 192.0
+offset_bottom = 283.0
+
+[node name="Label" type="Label" parent="Level2Button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 38.0
+offset_bottom = 34.0
+text = "2"
+label_settings = SubResource("LabelSettings_esada")
+
+[node name="Chain2" type="Sprite2D" parent="Level2Button"]
+position = Vector2(27, 23)
+scale = Vector2(0.384058, 0.407895)
+texture = ExtResource("5_427vf")
+
+[node name="Level3Button" type="Button" parent="."]
+offset_left = 231.0
+offset_top = 33.0
+offset_right = 286.0
+offset_bottom = 79.0
+
+[node name="Label" type="Label" parent="Level3Button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 38.0
+offset_bottom = 34.0
+text = "3"
+label_settings = SubResource("LabelSettings_esada")
+
+[node name="Chain3" type="Sprite2D" parent="Level3Button"]
+position = Vector2(27, 24)
+scale = Vector2(0.384058, 0.407895)
+texture = ExtResource("5_427vf")
+
+[node name="Level4Button" type="Button" parent="."]
+offset_left = 313.0
+offset_top = 375.0
+offset_right = 368.0
+offset_bottom = 421.0
+
+[node name="Label" type="Label" parent="Level4Button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 38.0
+offset_bottom = 34.0
+text = "4"
+label_settings = SubResource("LabelSettings_esada")
+
+[node name="Chain4" type="Sprite2D" parent="Level4Button"]
+position = Vector2(28, 24)
+scale = Vector2(0.384058, 0.407895)
+texture = ExtResource("5_427vf")
+
+[node name="Level5Button" type="Button" parent="."]
+offset_left = 337.0
+offset_top = 194.0
+offset_right = 392.0
+offset_bottom = 240.0
+
+[node name="Label" type="Label" parent="Level5Button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 38.0
+offset_bottom = 34.0
+text = "5"
+label_settings = SubResource("LabelSettings_esada")
+
+[node name="Chain5" type="Sprite2D" parent="Level5Button"]
+position = Vector2(27, 22)
+scale = Vector2(0.384058, 0.407895)
+texture = ExtResource("5_427vf")
+
+[node name="Level6Button" type="Button" parent="."]
+offset_left = 544.0
+offset_top = 195.0
+offset_right = 599.0
+offset_bottom = 241.0
+text = "
+"
+
+[node name="Label" type="Label" parent="Level6Button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 13.0
+offset_right = 38.0
+offset_bottom = 34.0
+text = "6"
+label_settings = SubResource("LabelSettings_esada")
+
+[node name="Chain6" type="Sprite2D" parent="Level6Button"]
+position = Vector2(28, 22)
+scale = Vector2(0.384058, 0.407895)
+texture = ExtResource("5_427vf")
+
+[node name="Level7Button" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 86.0
+offset_right = 518.0
+offset_bottom = 133.0
+text = "
+"
+
+[node name="Label" type="Label" parent="Level7Button"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 34.0
+offset_bottom = 38.0
+text = "7"
+label_settings = SubResource("LabelSettings_4dndl")
+
+[node name="Chain7" type="Sprite2D" parent="Level7Button"]
+position = Vector2(25, 23)
+scale = Vector2(0.384058, 0.407895)
+texture = ExtResource("5_427vf")
+
+[node name="1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(368.25, 213)
+scale = Vector2(0.383073, 0.388889)
+texture = ExtResource("5_nlgam")
+
+[node name="Button" type="Button" parent="1"]
+offset_left = -642.828
+offset_top = 357.429
+offset_right = -248.828
+offset_bottom = 527.429
+
+[node name="Label" type="Label" parent="1/Button"]
+layout_mode = 0
+offset_left = 130.523
+offset_top = 7.7143
+offset_right = 154.523
+offset_bottom = 60.7143
+scale = Vector2(5, 5)
+text = "ปิด
+"
+label_settings = SubResource("LabelSettings_4dndl")
+
+[node name="Button2" type="Button" parent="1"]
+offset_left = 28.0624
+offset_top = 367.714
+offset_right = 422.062
+offset_bottom = 537.714
+
+[node name="Label" type="Label" parent="1/Button2"]
+layout_mode = 0
+offset_left = 39.157
+offset_top = 2.57144
+offset_right = 99.157
+offset_bottom = 55.5714
+scale = Vector2(5, 5)
+text = "เริ่มด่าน
+"
+label_settings = SubResource("LabelSettings_4dndl")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Level1Button" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level2Button" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level3Button" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="Level4Button" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="Level5Button" to="." method="_on_level_5_pressed"]
+[connection signal="pressed" from="Level6Button" to="." method="_on_level_6_pressed"]
+[connection signal="pressed" from="Level7Button" to="." method="_on_level_7_pressed"]
+[connection signal="pressed" from="1/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="1/Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0jdfj3cav2on"]
+
+[ext_resource type="Script" uid="uid://43qq4fyhux2d" path="res://Hotbar/hotbar.gd" id="1_qwfd2"]
+[ext_resource type="Texture2D" uid="uid://comuedgr5blcr" path="res://image/sword_shop.png" id="2_u7di5"]
+[ext_resource type="Texture2D" uid="uid://bc0mkh61i24y6" path="res://bow/bow2.png" id="3_avrs5"]
+
+[node name="Hotbar" type="Control"]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwfd2")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -40.0
+offset_right = 28.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 6
+
+[node name="Itembutton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+mouse_filter = 2
+icon = ExtResource("2_u7di5")
+
+[node name="ItemButton2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+mouse_filter = 2
+icon = ExtResource("3_avrs5")

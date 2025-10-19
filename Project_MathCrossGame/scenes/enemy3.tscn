@@ -1,0 +1,200 @@
+[gd_scene load_steps=25 format=3 uid="uid://fpule8qukwlu"]
+
+[ext_resource type="Script" uid="uid://c5oovxkfao57n" path="res://scripts/enemy_3.gd" id="1_o2iik"]
+[ext_resource type="Texture2D" uid="uid://dae2gi5ri3usy" path="res://Cute_Fantasy_Free/Enemies/Skeleton.png" id="2_kroph"]
+[ext_resource type="PackedScene" uid="uid://bugopylbn3g64" path="res://scenes/coin_collectable.tscn" id="3_xx6g3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx6g3"]
+atlas = ExtResource("2_kroph")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wk5q"]
+atlas = ExtResource("2_kroph")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0uxi"]
+atlas = ExtResource("2_kroph")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1odl8"]
+atlas = ExtResource("2_kroph")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n43p3"]
+atlas = ExtResource("2_kroph")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4ydu"]
+atlas = ExtResource("2_kroph")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffaa8"]
+atlas = ExtResource("2_kroph")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h30x2"]
+atlas = ExtResource("2_kroph")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wgr7"]
+atlas = ExtResource("2_kroph")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vgmr"]
+atlas = ExtResource("2_kroph")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2iik"]
+atlas = ExtResource("2_kroph")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kroph"]
+atlas = ExtResource("2_kroph")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1mqn"]
+atlas = ExtResource("2_kroph")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8d3n"]
+atlas = ExtResource("2_kroph")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rvo7"]
+atlas = ExtResource("2_kroph")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na8y0"]
+atlas = ExtResource("2_kroph")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofhr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx6g3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wk5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0uxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1odl8")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n43p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4ydu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffaa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h30x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wgr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vgmr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2iik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kroph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1mqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8d3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rvo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na8y0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxes2"]
+radius = 266.008
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_magwu"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mnwgd"]
+radius = 13.0384
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 374.021
+
+[node name="enemy3" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_o2iik")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ofhr4")
+animation = &"idle"
+
+[node name="detection_area" type="Area2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_lxes2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_magwu")
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_mnwgd")
+
+[node name="take_damage_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="healthbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.870588, 0.0666667, 1)
+offset_left = -7.0
+offset_top = 9.0
+offset_right = 133.0
+offset_bottom = 36.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+
+[node name="coin_collectable" parent="." instance=ExtResource("3_xx6g3")]
+visible = false
+
+[node name="coin_collect_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin_collect_area"]
+visible = false
+shape = SubResource("CircleShape2D_5uy6h")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
+[connection signal="body_entered" from="coin_collect_area" to="." method="_on_coin_collect_area_body_entered"]

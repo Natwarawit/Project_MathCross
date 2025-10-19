@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b1vs5u7a286u0"]
+
+[ext_resource type="Texture2D" uid="uid://ctk04y8kxlnto" path="res://image/armour.png" id="1_e4gv1"]
+[ext_resource type="Script" uid="uid://cs184icnao42g" path="res://gd/item_resource.gd" id="1_mf1rc"]
+
+[resource]
+script = ExtResource("1_mf1rc")
+name = "Armor"
+description = ""
+icon = ExtResource("1_e4gv1")
+inventarSlot = "EquipmentLeft"
+inventarPosition = 0
+metadata/_custom_type_script = "uid://cs184icnao42g"

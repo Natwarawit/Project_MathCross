@@ -1,0 +1,280 @@
+[gd_scene load_steps=18 format=3 uid="uid://boedbuwvwkfv2"]
+
+[ext_resource type="Script" uid="uid://c5dk67qwfn43i" path="res://scripts/Shop.gd" id="1_w4ihw"]
+[ext_resource type="FontFile" uid="uid://cmabas1nbtgcr" path="res://font/PressStart2P.ttf" id="2_m8mf8"]
+[ext_resource type="Resource" uid="uid://c7oxkn65cjaiq" path="res://inventory/playerinv.tres" id="2_y6sft"]
+[ext_resource type="Texture2D" uid="uid://cstgqdgrakf5w" path="res://image/helmet_black.png" id="3_1v8qu"]
+[ext_resource type="Texture2D" uid="uid://ctk04y8kxlnto" path="res://image/armour.png" id="3_boqfi"]
+[ext_resource type="Texture2D" uid="uid://comuedgr5blcr" path="res://image/sword_shop.png" id="4_44xle"]
+[ext_resource type="Texture2D" uid="uid://bmb5nx4mmpsu8" path="res://image/armour_black.png" id="5_24it5"]
+[ext_resource type="Texture2D" uid="uid://cd6a5jlmefit" path="res://image/coin.png" id="6_bs8fh"]
+[ext_resource type="PackedScene" uid="uid://cjql0ln5bp5jf" path="res://inventory/inv_ui.tscn" id="8_y6sft"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="10_heatd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_51wpo"]
+font = ExtResource("2_m8mf8")
+font_size = 21
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ssep"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_pxwcj"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvcyq"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_hiv58"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_1v8qu"]
+font = ExtResource("10_heatd")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_44xle"]
+font = ExtResource("10_heatd")
+font_size = 30
+
+[node name="Shop" type="CanvasLayer"]
+rotation = 0.00323626
+scale = Vector2(1.1, 1.1)
+transform = Transform2D(1.09999, 0.00355987, -0.00355987, 1.09999, 0, 0)
+script = ExtResource("1_w4ihw")
+inv = ExtResource("2_y6sft")
+hat_texture = ExtResource("3_1v8qu")
+sword_texture = ExtResource("4_44xle")
+armor_texture = ExtResource("5_24it5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 950.0
+offset_bottom = 550.0
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 0.815686)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 314.0
+offset_top = 89.0
+offset_right = 892.0
+offset_bottom = 170.0
+scale = Vector2(1.02043, 1.05946)
+color = Color(0.436124, 0.345806, 0.224597, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 310.0
+offset_top = 192.0
+offset_right = 894.0
+offset_bottom = 277.0
+color = Color(0.436124, 0.345806, 0.224597, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 311.0
+offset_top = 300.0
+offset_right = 896.0
+offset_bottom = 387.0
+color = Color(0.436124, 0.345806, 0.224597, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 324.0
+offset_top = 96.0
+offset_right = 399.0
+offset_bottom = 161.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 323.652
+offset_top = 200.954
+offset_right = 398.652
+offset_bottom = 265.954
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = 325.008
+offset_top = 310.95
+offset_right = 400.008
+offset_bottom = 375.95
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopConrol" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 250.0
+offset_top = 50.0
+offset_right = 290.0
+offset_bottom = 90.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Hat" type="Button" parent="ShopConrol"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00919952
+anchor_top = -0.0110001
+anchor_right = -0.00919952
+anchor_bottom = -0.0110001
+offset_left = 541.368
+offset_top = 62.44
+offset_right = 620.368
+offset_bottom = 100.44
+text = "Buy"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sword" type="Button" parent="ShopConrol"]
+layout_mode = 0
+offset_left = 542.692
+offset_top = 162.436
+offset_right = 621.692
+offset_bottom = 200.436
+text = "Buy"
+metadata/_edit_use_anchors_ = true
+
+[node name="Armor" type="Button" parent="ShopConrol"]
+layout_mode = 0
+offset_left = 547.038
+offset_top = 269.422
+offset_right = 626.038
+offset_bottom = 307.422
+text = "Buy"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 516.444
+offset_top = 445.331
+offset_right = 706.444
+offset_bottom = 513.331
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 47.0774
+offset_top = 23.8478
+offset_right = 212.077
+offset_bottom = 87.8478
+text = "Back"
+label_settings = SubResource("LabelSettings_51wpo")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 357.759
+offset_top = 233.843
+offset_right = 397.759
+offset_bottom = 273.843
+texture = ExtResource("3_boqfi")
+
+[node name="Armour" type="Sprite2D" parent="."]
+position = Vector2(360.311, 234.155)
+scale = Vector2(4.00845, 3.90808)
+texture = ExtResource("5_24it5")
+
+[node name="Hat" type="Sprite2D" parent="."]
+position = Vector2(356.337, 129.455)
+scale = Vector2(4.73764, 4.37217)
+texture = ExtResource("3_1v8qu")
+
+[node name="Sword" type="Sprite2D" parent="."]
+position = Vector2(360.776, 342.409)
+scale = Vector2(3.91464, 3.91464)
+texture = ExtResource("4_44xle")
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 123.041
+offset_top = 96.875
+offset_right = 350.041
+offset_bottom = 132.875
+text = ": 10 coins"
+label_settings = SubResource("LabelSettings_3ssep")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 440.71
+offset_top = 218.575
+offset_right = 667.71
+offset_bottom = 254.575
+text = "Armour"
+label_settings = SubResource("LabelSettings_pxwcj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 433.0
+offset_top = 114.0
+offset_right = 660.0
+offset_bottom = 150.0
+text = "Hat"
+label_settings = SubResource("LabelSettings_xvcyq")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 445.062
+offset_top = 327.561
+offset_right = 672.062
+offset_bottom = 363.561
+text = "Sword"
+label_settings = SubResource("LabelSettings_3ssep")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 730.368
+offset_top = 112.637
+offset_right = 862.368
+offset_bottom = 157.637
+text = "2"
+label_settings = SubResource("LabelSettings_hiv58")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 730.702
+offset_top = 215.636
+offset_right = 862.702
+offset_bottom = 260.636
+text = "10"
+label_settings = SubResource("LabelSettings_hiv58")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 733.029
+offset_top = 316.629
+offset_right = 865.029
+offset_bottom = 361.629
+text = "15"
+label_settings = SubResource("LabelSettings_hiv58")
+metadata/_edit_use_anchors_ = true
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(90.3585, 110.617)
+scale = Vector2(0.226128, 0.226128)
+texture = ExtResource("6_bs8fh")
+
+[node name="Inv_UI" parent="." instance=ExtResource("8_y6sft")]
+scale = Vector2(2.86648, 2.94404)
+transform = Transform2D(2.86648, 0, 0, 2.94404, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="NotEnoughCoinsLabel" type="Label" parent="."]
+offset_left = 459.147
+offset_top = 16.696
+offset_right = 857.147
+offset_bottom = 72.696
+text = "ยอดเงินของคุณไม่เพียงพอ"
+label_settings = SubResource("LabelSettings_1v8qu")
+metadata/_edit_use_anchors_ = true
+
+[node name="PurchaseSuccessLabel" type="Label" parent="."]
+offset_left = 517.335
+offset_top = 18.3259
+offset_right = 663.335
+offset_bottom = 74.3259
+text = "ขอบคุณที่ใช้บริการ"
+label_settings = SubResource("LabelSettings_44xle")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ShopConrol/Hat" to="." method="_on_hat_pressed"]
+[connection signal="pressed" from="ShopConrol/Sword" to="." method="_on_sword_pressed"]
+[connection signal="pressed" from="ShopConrol/Armor" to="." method="_on_armor_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

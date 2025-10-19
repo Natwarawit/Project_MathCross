@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b38lrnj4r73gp"]
+
+[ext_resource type="Script" uid="uid://d4j432lctsm0o" path="res://scripts/loading.gd" id="1_ir5ef"]
+[ext_resource type="Texture2D" uid="uid://bv8bi42g6pgns" path="res://image/output.jpg" id="2_101rs"]
+[ext_resource type="Texture2D" uid="uid://dtan6l8e8bdcc" path="res://image/GUI.png" id="3_101rs"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="3_dhqfv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhqfv"]
+texture = ExtResource("3_101rs")
+region_rect = Rect2(135, 20, 52, 7)
+
+[node name="loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2059.0
+offset_bottom = 1208.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 0.36)
+script = ExtResource("1_ir5ef")
+
+[node name="BackgroundGame" type="Sprite2D" parent="."]
+position = Vector2(2347.22, 566.667)
+scale = Vector2(25.5425, 18.731)
+texture = ExtResource("2_101rs")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1191.67
+offset_top = 1052.78
+offset_right = 2725.67
+offset_bottom = 1323.78
+theme_override_fonts/font = ExtResource("3_dhqfv")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/background = SubResource("StyleBoxTexture_dhqfv")

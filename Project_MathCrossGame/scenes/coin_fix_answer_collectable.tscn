@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfxcpx5ol0nl0"]
+
+[ext_resource type="Texture2D" uid="uid://dl1uv0vul3x8t" path="res://image/coin_fix.png" id="1_a236s"]
+
+[node name="coin_fix_answer_collectable" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 4.76837e-07)
+scale = Vector2(0.0624665, 0.0669445)
+texture = ExtResource("1_a236s")

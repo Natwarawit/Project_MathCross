@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1ltbo8fwr2cf"]
+
+[ext_resource type="Texture2D" uid="uid://c7460ucu0daam" path="res://art_animation/objects/chest_01.png" id="1_sy5e1"]
+[ext_resource type="Script" uid="uid://ck6hg3y1f5xtd" path="res://scripts/chest.gd" id="2_gqd3d"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="3_gqd3d"]
+[ext_resource type="AudioStream" uid="uid://h3nfaktrmg0i" path="res://sound/Retro Event Acute 08.wav" id="4_yue2o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yue2o"]
+radius = 15.3082
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sy5e1"]
+radius = 13.0384
+
+[sub_resource type="LabelSettings" id="LabelSettings_yue2o"]
+font = ExtResource("3_gqd3d")
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilhio"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqd3d"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yue2o"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhylo"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w02o5"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ilhio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilhio")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqd3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yue2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhylo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w02o5")
+}],
+"loop": false,
+"name": &"open",
+"speed": 3.0
+}]
+
+[node name="Chest" type="Sprite2D"]
+position = Vector2(19.125, 18.25)
+scale = Vector2(2.48438, 2.34375)
+hframes = 4
+script = ExtResource("2_gqd3d")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_yue2o")
+
+[node name="chest_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest_hitbox"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_sy5e1")
+
+[node name="Text" type="Label" parent="."]
+offset_left = -11.3207
+offset_top = 8.0
+offset_right = 35.6793
+offset_bottom = 34.0
+scale = Vector2(0.5, 0.5)
+label_settings = SubResource("LabelSettings_yue2o")
+
+[node name="Text2" type="Label" parent="."]
+offset_left = -10.5157
+offset_top = -26.56
+offset_right = 42.4843
+offset_bottom = -3.56
+scale = Vector2(0.5, 0.5)
+label_settings = SubResource("LabelSettings_yue2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ilhio")
+animation = &"idle"
+
+[node name="collectnumber" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yue2o")
+volume_db = -7.776
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

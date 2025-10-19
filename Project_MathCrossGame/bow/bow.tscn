@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://horn1mc2j2v"]
+
+[ext_resource type="Script" uid="uid://lkqab7to360u" path="res://bow/bow.gd" id="1_hqfxo"]
+[ext_resource type="Texture2D" uid="uid://bc0mkh61i24y6" path="res://bow/bow2.png" id="1_rckjo"]
+[ext_resource type="AudioStream" uid="uid://376menflv5n5" path="res://sound/arrow_sound.mp3" id="3_4bj44"]
+
+[node name="Bow" type="Node2D"]
+script = ExtResource("1_hqfxo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 0)
+rotation = 2.36318
+texture = ExtResource("1_rckjo")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4bj44")

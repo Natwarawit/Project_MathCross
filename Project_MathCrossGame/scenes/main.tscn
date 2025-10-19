@@ -1,0 +1,340 @@
+[gd_scene load_steps=26 format=3 uid="uid://s4e1tsvgk2se"]
+
+[ext_resource type="Script" uid="uid://barctdkc58080" path="res://gd/Main.gd" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://kruwy10cha6q" path="res://image/Screenshot 2025-03-26 233145.png" id="3_choun"]
+[ext_resource type="Texture2D" uid="uid://cvk2311e25xn7" path="res://image/mathcrosslogo-removebg-preview.png" id="3_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dmifdsp2tvvth" path="res://image/background.png" id="3_tipki"]
+[ext_resource type="FontFile" uid="uid://cmabas1nbtgcr" path="res://font/PressStart2P.ttf" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://b5m7rhfvsb8pn" path="res://scenes/Setting.tscn" id="5_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dtan6l8e8bdcc" path="res://image/GUI.png" id="6_85g3d"]
+[ext_resource type="Texture2D" uid="uid://cn1ufnaxbpise" path="res://image/Screenshot 2025-03-23 025113.png" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://kyhgiprrtov2" path="res://scenes/how_to_play.tscn" id="7_tipki"]
+[ext_resource type="Texture2D" uid="uid://bgq3fl5ihxvf3" path="res://image/ดาวน์โหลด.png" id="7_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://bhivhaawrmj5r" path="res://image/math devil.png" id="8_eb6dy"]
+[ext_resource type="Script" uid="uid://buh2xj0yr787x" path="res://scripts/showgrid.gd" id="8_ya4ey"]
+[ext_resource type="AudioStream" uid="uid://xpore1cu3d3e" path="res://sound/Button Click - Sound Effect (mp3cut.net).mp3" id="12_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://d1entbe3jamqo" path="res://sound/Press-X-Twice.mp3" id="13_jkv2x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ya4ey"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(145, 98, 46, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85g3d"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(113, 98, 30, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eb6dy"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(113, 113, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_choun"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(113, 81, 30, 14)
+
+[sub_resource type="Theme" id="Theme_ya4ey"]
+default_font = ExtResource("4_tipki")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("4_tipki")
+Button/styles/disabled = SubResource("StyleBoxTexture_ya4ey")
+Button/styles/focus = SubResource("StyleBoxTexture_85g3d")
+Button/styles/hover = SubResource("StyleBoxTexture_eb6dy")
+Button/styles/normal = SubResource("StyleBoxTexture_choun")
+Button/styles/pressed = null
+
+[sub_resource type="LabelSettings" id="LabelSettings_jiku5"]
+font_size = 75
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvyuj"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(113, 81, 30, 14)
+
+[sub_resource type="Theme" id="Theme_eb6dy"]
+default_font = ExtResource("4_tipki")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 45
+Button/fonts/font = ExtResource("4_tipki")
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource("StyleBoxTexture_xvyuj")
+Button/styles/pressed = null
+
+[sub_resource type="Animation" id="Animation_tipki"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o6xl0"]
+resource_name = "intro"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85g3d"]
+_data = {
+&"RESET": SubResource("Animation_tipki"),
+&"intro": SubResource("Animation_o6xl0")
+}
+
+[node name="Main" type="Node2D"]
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_tbgi4")
+
+[node name="background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(630.476, 342.143)
+scale = Vector2(0.657407, 0.657407)
+texture = ExtResource("3_tipki")
+
+[node name="Screenshot2025-03-26233145" type="Sprite2D" parent="."]
+position = Vector2(638.607, 340)
+scale = Vector2(1.44283, 1.17069)
+texture = ExtResource("3_choun")
+
+[node name="ControlButton" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 1208.0
+offset_bottom = 629.0
+
+[node name="Play" type="Button" parent="ControlButton"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 254.0
+offset_right = 509.0
+offset_bottom = 369.0
+theme = SubResource("Theme_ya4ey")
+
+[node name="Play" type="Label" parent="ControlButton/Play"]
+layout_mode = 0
+offset_left = 100.571
+offset_top = -5.0
+offset_right = 303.571
+offset_bottom = 95.0
+text = "เริ่มเล่น"
+label_settings = SubResource("LabelSettings_jiku5")
+
+[node name="HowToPlay" type="Button" parent="ControlButton"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 377.0
+offset_right = 509.0
+offset_bottom = 489.0
+theme = SubResource("Theme_ya4ey")
+
+[node name="HowToPlay" type="Label" parent="ControlButton/HowToPlay"]
+layout_mode = 0
+offset_left = 90.5714
+offset_top = -7.99997
+offset_right = 377.571
+offset_bottom = 101.0
+text = "วิธีการเล่น"
+label_settings = SubResource("LabelSettings_jiku5")
+
+[node name="Setting" type="Button" parent="ControlButton"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 500.0
+offset_right = 509.0
+offset_bottom = 606.0
+theme = SubResource("Theme_ya4ey")
+
+[node name="Setting" type="Label" parent="ControlButton/Setting"]
+layout_mode = 0
+offset_left = 120.286
+offset_top = -11.4286
+offset_right = 293.286
+offset_bottom = 97.5719
+text = "ตั้งค่า"
+label_settings = SubResource("LabelSettings_jiku5")
+
+[node name="Quit" type="Button" parent="ControlButton"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 622.0
+offset_right = 509.0
+offset_bottom = 716.0
+theme = SubResource("Theme_ya4ey")
+
+[node name="Quit" type="Label" parent="ControlButton/Quit"]
+layout_mode = 0
+offset_left = 97.2857
+offset_top = -19.1428
+offset_right = 353.286
+offset_bottom = 89.8572
+text = "ออกเกม"
+label_settings = SubResource("LabelSettings_jiku5")
+
+[node name="MathDevil" type="Sprite2D" parent="."]
+position = Vector2(894.286, 488.571)
+rotation = 0.337008
+scale = Vector2(0.199409, 0.213151)
+texture = ExtResource("8_eb6dy")
+
+[node name="Icon4" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 557.143
+offset_right = 265.0
+offset_bottom = 726.143
+theme_override_font_sizes/font_size = 60
+text = "⍈
+"
+
+[node name="Icon3" type="Label" parent="."]
+offset_left = 85.7143
+offset_top = 454.286
+offset_right = 167.714
+offset_bottom = 537.286
+theme_override_font_sizes/font_size = 60
+text = "⚙️"
+
+[node name="Icon2" type="Label" parent="."]
+offset_left = 62.8571
+offset_top = 325.714
+offset_right = 144.857
+offset_bottom = 408.714
+theme_override_font_sizes/font_size = 60
+text = "🕮"
+
+[node name="Icon" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 202.857
+offset_right = 152.0
+offset_bottom = 285.857
+theme_override_font_sizes/font_size = 60
+text = "▶️"
+
+[node name="ShowGrid" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 706.0
+offset_top = 3.0
+offset_right = 1167.0
+offset_bottom = 413.0
+rotation = 0.356321
+script = ExtResource("8_ya4ey")
+
+[node name="GridContainer" type="GridContainer" parent="ShowGrid"]
+layout_mode = 0
+offset_left = 156.489
+offset_top = 11.7197
+offset_right = 1225.49
+offset_bottom = 1171.72
+rotation = -0.117976
+scale = Vector2(0.404011, 0.361453)
+theme = SubResource("Theme_eb6dy")
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="ShowGrid"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ดาวน์โหลด" type="Sprite2D" parent="."]
+position = Vector2(734.05, 533.483)
+rotation = -0.278321
+scale = Vector2(0.693202, 0.693071)
+texture = ExtResource("7_ya4ey")
+
+[node name="Mathcrosslogo-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(611.429, 65.7143)
+scale = Vector2(0.727723, 0.727723)
+texture = ExtResource("3_o6xl0")
+
+[node name="howtoplay" parent="." instance=ExtResource("7_tipki")]
+visible = false
+position = Vector2(-11.4286, -11.4286)
+scale = Vector2(0.867, 1)
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_a8y0u")
+volume_db = -30.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_jkv2x")
+volume_db = -30.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_85g3d")
+}
+
+[node name="Setting" parent="." instance=ExtResource("5_85g3d")]
+visible = false
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 6.0
+
+[node name="Screenshot2025-03-23025113" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(625.195, 347.829)
+scale = Vector2(1.38683, 1.38683)
+texture = ExtResource("6_tefeu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1246.0
+offset_bottom = 697.0
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="ControlButton/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ControlButton/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="ControlButton/Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="ControlButton/Quit" to="." method="_on_quit_pressed"]
