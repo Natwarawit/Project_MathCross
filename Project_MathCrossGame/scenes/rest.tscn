@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bhodq2w6eujwk"]
+[gd_scene load_steps=43 format=4 uid="uid://bhodq2w6eujwk"]
 
 [ext_resource type="Texture2D" uid="uid://dgymtlwbepkxc" path="res://image/Asian-Village-Adventure-Game-Background-Design-001.jpg" id="1_nbmgt"]
 [ext_resource type="Script" uid="uid://c7ykjg4jgls4i" path="res://scripts/Rest.gd" id="1_ol74s"]
@@ -15,6 +15,9 @@
 [ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="10_p1gp2"]
 [ext_resource type="Texture2D" uid="uid://ct7ekc0g6gtpu" path="res://art_animation/tilesets/fences.png" id="12_vne21"]
 [ext_resource type="Texture2D" uid="uid://dk0gx5jxk777r" path="res://art_animation/tilesets/decor_16x16.png" id="13_48564"]
+[ext_resource type="PackedScene" uid="uid://bfdcrmates44r" path="res://scenes/enemy.tscn" id="16_8lhd8"]
+[ext_resource type="Script" uid="uid://i4p04twwlb7b" path="res://inventory/inventory_item.gd" id="17_7e64x"]
+[ext_resource type="Texture2D" uid="uid://bsp0sye0r35qb" path="res://image/coin16x16.png" id="18_tut3h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8dtxw"]
 texture = ExtResource("3_lfsvw")
@@ -462,6 +465,12 @@ texture = ExtResource("13_48564")
 [sub_resource type="TileSet" id="TileSet_8lhd8"]
 sources/0 = SubResource("TileSetAtlasSource_xxxr5")
 
+[sub_resource type="Resource" id="Resource_i1r3h"]
+resource_local_to_scene = true
+script = ExtResource("17_7e64x")
+name = "coin"
+texture = ExtResource("18_tut3h")
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ol74s")
 
@@ -553,6 +562,10 @@ transform = Transform2D(0.399998, 0.0012945, -0.00123948, 0.382998, 0, 0)
 visible = false
 position = Vector2(141, 225)
 scale = Vector2(0.5, 0.5)
+
+[node name="enemy" parent="." instance=ExtResource("16_8lhd8")]
+position = Vector2(185, 421)
+itemRes = SubResource("Resource_i1r3h")
 
 [connection signal="body_entered" from="portal/earth_area" to="." method="_on_earth_area_body_entered"]
 [connection signal="body_exited" from="portal/earth_area" to="." method="_on_earth_area_body_exited"]

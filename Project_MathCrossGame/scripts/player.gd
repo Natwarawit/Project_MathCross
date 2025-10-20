@@ -21,13 +21,15 @@ var can_use_skill = true
 var using_bow: bool = false   # เริ่มยังไม่ถือธนู
 
 func _ready():
-	health = global.max_health 
+	health = global.max_health
 	$AnimatedSprite2D.play("front_idle")
 	$Bow.visible = using_bow
 	
 	# แสดงหมวกถ้า global บอกว่าเคยซื้อ
+	print("Helmet type from global: ", global.helmet_type)  # ตรวจสอบค่า
 	if global.player_has_helmet:
-		helmet_show()
+		var helmet_type = global.helmet_type
+		helmet_show(helmet_type)  # อัปเดตหมวก
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -289,15 +291,39 @@ func eat():
 	else:
 		print("❌ ไม่มีแอปเปิ้ลใน inventory")
 
-func helmet_show():
+func helmet_show(helmet_type: String): 
 	if head != null:
 		head.visible = true
-		global.max_health = 150  # เปลี่ยนค่าพลังชีวิตสูงสุดเป็น 150
-		health = min(health, global.max_health)  # รีเซ็ต health ให้ไม่เกิน max_health ใหม่
-		update_health()  # อัพเดตการแสดงผลพลังชีวิต
-		print("Helmet equipped! Max health increased to ", global.max_health)
+		
+		# ตรวจสอบประเภทของหมวกและอัปเดตค่าพลังชีวิตสูงสุด
+		match helmet_type:
+			"หมวกทองแดง":
+				global.max_health = 150  # เปลี่ยนค่าพลังชีวิตสูงสุดเป็น 150
+				global.helmet_type = "หมวกทองแดง"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/copper_helmet.png")
+			"หมวกเหล็ก":
+				global.max_health = 200  # เปลี่ยนค่าพลังชีวิตสูงสุดเป็น 200
+				global.helmet_type = "หมวกเหล็ก"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/iron_helmet.png")
+			"หมวกทอง":
+				global.max_health = 250  # เปลี่ยนค่าพลังชีวิตสูงสุดเป็น 250
+				global.helmet_type = "หมวกทอง"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/gold_helmet.png")
+			"หมวกเพชร":
+				global.max_health = 300 
+				global.helmet_type = "หมวกเพชร"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/diamond_helmet.png")
+			_:
+				print("ประเภทหมวกไม่ถูกต้อง")
+
+		# รีเซ็ต health ให้ไม่เกิน max_health ใหม่
+		health = min(health, global.max_health)  
+		
+		# อัปเดตการแสดงผลพลังชีวิต
+		update_health()
+		
+		print("หมวก " + helmet_type + " ถูกสวมใส่! พลังชีวิตสูงสุดเพิ่มขึ้นเป็น ", global.max_health)
 	else:
 		print("❌ HelmetBlack node ไม่พบ")
-
 func player():
 	pass

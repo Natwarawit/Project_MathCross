@@ -140,7 +140,7 @@ func drop_coin():
 	var drop_fix := false
 	
 	# โอกาส 30% ดรอป coin_fix
-	if randf() < 0.3:
+	if randf() < 0.1:
 		drop_fix = true
 
 	if drop_fix:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://boedbuwvwkfv2"]
+[gd_scene load_steps=22 format=3 uid="uid://boedbuwvwkfv2"]
 
 [ext_resource type="Script" uid="uid://c5dk67qwfn43i" path="res://scripts/Shop.gd" id="1_w4ihw"]
 [ext_resource type="FontFile" uid="uid://cmabas1nbtgcr" path="res://font/PressStart2P.ttf" id="2_m8mf8"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://cd6a5jlmefit" path="res://image/coin.png" id="6_bs8fh"]
 [ext_resource type="PackedScene" uid="uid://cjql0ln5bp5jf" path="res://inventory/inv_ui.tscn" id="8_y6sft"]
 [ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="10_heatd"]
+[ext_resource type="Texture2D" uid="uid://csruhv6rfc7lb" path="res://image/armor/helmet/copper_helmet.png" id="11_7mqwv"]
+[ext_resource type="Texture2D" uid="uid://bysfbaf07uwfl" path="res://image/armor/helmet/diamond_helmet.png" id="12_gobkm"]
+[ext_resource type="Texture2D" uid="uid://bocfdby0ywp4k" path="res://image/armor/helmet/gold_helmet.png" id="13_j14q8"]
+[ext_resource type="Texture2D" uid="uid://de7pajksdl5yt" path="res://image/armor/helmet/iron_helmet.png" id="14_5u241"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_51wpo"]
 font = ExtResource("2_m8mf8")
@@ -43,9 +47,6 @@ scale = Vector2(1.1, 1.1)
 transform = Transform2D(1.09999, 0.00355987, -0.00355987, 1.09999, 0, 0)
 script = ExtResource("1_w4ihw")
 inv = ExtResource("2_y6sft")
-hat_texture = ExtResource("3_1v8qu")
-sword_texture = ExtResource("4_44xle")
-armor_texture = ExtResource("5_24it5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 250.0
@@ -111,7 +112,7 @@ offset_right = 290.0
 offset_bottom = 90.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Hat" type="Button" parent="ShopConrol"]
+[node name="CopperHelmet" type="Button" parent="ShopConrol"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.00919952
@@ -125,7 +126,53 @@ offset_bottom = 100.44
 text = "Buy"
 metadata/_edit_use_anchors_ = true
 
+[node name="IronHelmet" type="Button" parent="ShopConrol"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -13.4955
+anchor_top = -1.53925
+anchor_right = -13.4955
+anchor_bottom = -1.53925
+offset_left = 1082.01
+offset_top = 124.462
+offset_right = 1161.01
+offset_bottom = 162.462
+text = "Buy"
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldHelmet" type="Button" parent="ShopConrol"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -40.5047
+anchor_top = -4.6177
+anchor_right = -40.5047
+anchor_bottom = -4.6177
+offset_left = 2163.29
+offset_top = 248.506
+offset_right = 2242.29
+offset_bottom = 286.506
+text = "Buy"
+metadata/_edit_use_anchors_ = true
+
+[node name="DiamondHelmet" type="Button" parent="ShopConrol"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -26.966
+anchor_top = -3.08995
+anchor_right = -26.966
+anchor_bottom = -3.08995
+offset_left = 1622.65
+offset_top = 186.484
+offset_right = 1701.65
+offset_bottom = 224.484
+text = "Buy"
+metadata/_edit_use_anchors_ = true
+
 [node name="Sword" type="Button" parent="ShopConrol"]
+visible = false
 layout_mode = 0
 offset_left = 542.692
 offset_top = 162.436
@@ -135,6 +182,7 @@ text = "Buy"
 metadata/_edit_use_anchors_ = true
 
 [node name="Armor" type="Button" parent="ShopConrol"]
+visible = false
 layout_mode = 0
 offset_left = 547.038
 offset_top = 269.422
@@ -174,6 +222,7 @@ scale = Vector2(4.00845, 3.90808)
 texture = ExtResource("5_24it5")
 
 [node name="Hat" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(356.337, 129.455)
 scale = Vector2(4.73764, 4.37217)
 texture = ExtResource("3_1v8qu")
@@ -197,7 +246,7 @@ offset_left = 440.71
 offset_top = 218.575
 offset_right = 667.71
 offset_bottom = 254.575
-text = "Armour"
+text = "ชุดเกราะ"
 label_settings = SubResource("LabelSettings_pxwcj")
 metadata/_edit_use_anchors_ = true
 
@@ -206,7 +255,7 @@ offset_left = 433.0
 offset_top = 114.0
 offset_right = 660.0
 offset_bottom = 150.0
-text = "Hat"
+text = "หมวกทองแดง"
 label_settings = SubResource("LabelSettings_xvcyq")
 metadata/_edit_use_anchors_ = true
 
@@ -215,7 +264,7 @@ offset_left = 445.062
 offset_top = 327.561
 offset_right = 672.062
 offset_bottom = 363.561
-text = "Sword"
+text = "ดาบ"
 label_settings = SubResource("LabelSettings_3ssep")
 metadata/_edit_use_anchors_ = true
 
@@ -252,6 +301,7 @@ scale = Vector2(0.226128, 0.226128)
 texture = ExtResource("6_bs8fh")
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_y6sft")]
+visible = false
 scale = Vector2(2.86648, 2.94404)
 transform = Transform2D(2.86648, 0, 0, 2.94404, 0, 0)
 metadata/_edit_use_anchors_ = true
@@ -274,7 +324,33 @@ text = "ขอบคุณที่ใช้บริการ"
 label_settings = SubResource("LabelSettings_44xle")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="ShopConrol/Hat" to="." method="_on_hat_pressed"]
+[node name="CopperHelmet" type="Sprite2D" parent="."]
+position = Vector2(361.323, 127.014)
+scale = Vector2(0.17066, 0.121984)
+texture = ExtResource("11_7mqwv")
+
+[node name="DiamondHelmet" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(359.286, 127.207)
+scale = Vector2(0.173136, 0.142973)
+texture = ExtResource("12_gobkm")
+
+[node name="GoldHelmet" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(363.147, 128.826)
+scale = Vector2(0.132843, 0.113719)
+texture = ExtResource("13_j14q8")
+
+[node name="IronHelmet" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(360.414, 127.017)
+scale = Vector2(0.14435, 0.145558)
+texture = ExtResource("14_5u241")
+
+[connection signal="pressed" from="ShopConrol/CopperHelmet" to="." method="_on_copper_helmet_pressed"]
+[connection signal="pressed" from="ShopConrol/IronHelmet" to="." method="_on_iron_helmet_pressed"]
+[connection signal="pressed" from="ShopConrol/GoldHelmet" to="." method="_on_gold_helmet_pressed"]
+[connection signal="pressed" from="ShopConrol/DiamondHelmet" to="." method="_on_diamond_helmet_pressed"]
 [connection signal="pressed" from="ShopConrol/Sword" to="." method="_on_sword_pressed"]
 [connection signal="pressed" from="ShopConrol/Armor" to="." method="_on_armor_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

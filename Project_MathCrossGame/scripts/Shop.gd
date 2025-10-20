@@ -11,7 +11,10 @@ extends CanvasLayer
 @export var armor_texture: Texture2D
 
 var item_prices = {
-	"หมวก": 2,
+	"หมวกทองแดง": 2,
+	"หมวกเหล็ก": 5,
+	"หมวกทอง": 20,
+	"หมวกเพชร": 30,
 	"ดาบ": 5,
 	"ชุด": 10
 }
@@ -35,7 +38,11 @@ func _ready():
 	coin_timer.connect("timeout", Callable(self, "update_coin_display"))
 
 	# เชื่อมปุ่ม
-	$ShopConrol/Hat.connect("pressed", Callable(self, "_on_hat_pressed"))
+	$ShopConrol/CopperHelmet.connect("pressed", Callable(self, "_on_copper_helmet_pressed"))
+	$ShopConrol/IronHelmet.connect("pressed", Callable(self, "_on_iron_helmet_pressed"))
+	$ShopConrol/GoldHelmet.connect("pressed", Callable(self, "_on_gold_helmet_pressed"))
+	$ShopConrol/DiamondHelmet.connect("pressed", Callable(self, "_on_diamond_helmet_pressed"))
+	#$ShopConrol/Hat.connect("pressed", Callable(self, "_on_hat_pressed"))
 	$ShopConrol/Sword.connect("pressed", Callable(self, "_on_sword_pressed"))
 	$ShopConrol/Armor.connect("pressed", Callable(self, "_on_armor_pressed"))
 	$Button.connect("pressed", Callable(self, "_on_button_pressed"))
@@ -65,14 +72,14 @@ func buy_item(item_name: String):
 	var new_item = InvItem.new()
 	new_item.name = item_name
 
-	match item_name:
-		"หมวก":
-			new_item.texture = hat_texture
-		"ดาบ":
-			new_item.texture = sword_texture
-		"ชุด":
-			new_item.texture = armor_texture
-
+	#match item_name:"
+		#"หมวก":
+			#new_item.texture = hat_texture
+		#"ดาบ":
+			#new_item.texture = sword_texture
+		#"ชุด":
+			#new_item.texture = armor_texture
+	
 	update_coin_display()
 	print("ซื้อ " + item_name + " สำเร็จ! เหรียญเหลือ:", inv_ui.get_item_count_misc("coin"))
 
@@ -109,3 +116,46 @@ func _check_and_buy(item_name: String) -> bool:
 
 func _on_button_pressed():
 	hide()
+
+
+func _on_copper_helmet_pressed():
+	selected_item = "หมวกทองแดง"
+	if _check_and_buy(selected_item):
+		global.player_has_helmet = true
+		$"../player".helmet_show("หมวกทองแดง")  # ส่งประเภทหมวกไปยังฟังก์ชัน helmet_show()
+		$ShopConrol/CopperHelmet.visible = false
+		$ShopConrol/IronHelmet.visible = true
+		$CopperHelmet.visible = false
+		$IronHelmet.visible = true
+		$Label.text = "หมวกเหล็ก"
+		$Label4.text = "5"
+
+func _on_iron_helmet_pressed():
+	selected_item = "หมวกเหล็ก"
+	if _check_and_buy(selected_item):
+		global.player_has_helmet = true
+		$"../player".helmet_show("หมวกเหล็ก")  # ส่งประเภทหมวกไปยังฟังก์ชัน helmet_show()
+		$ShopConrol/IronHelmet.visible = false
+		$ShopConrol/GoldHelmet.visible = true
+		$IronHelmet.visible = false
+		$GoldHelmet.visible = true
+		$Label.text = "หมวกทอง"
+		$Label4.text = "20"
+
+func _on_gold_helmet_pressed():
+	selected_item = "หมวกทอง"
+	if _check_and_buy(selected_item):
+		global.player_has_helmet = true
+		$"../player".helmet_show("หมวกทอง")  # ส่งประเภทหมวกไปยังฟังก์ชัน helmet_show()
+		$ShopConrol/GoldHelmet.visible = false
+		$ShopConrol/DiamondHelmet.visible = true
+		$GoldHelmet.visible = false
+		$DiamondHelmet.visible = true
+		$Label.text = "หมวกเพชร"
+		$Label4.text = "30"
+
+func _on_diamond_helmet_pressed():
+	selected_item = "หมวกเพชร"
+	if _check_and_buy(selected_item):
+		global.player_has_helmet = true
+		$"../player".helmet_show("หมวกเพชร")  # ส่งประเภทหมวกไปยังฟังก์ชัน helmet_show()

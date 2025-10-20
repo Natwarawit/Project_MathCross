@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://bistsqyi8uy0o"]
+[gd_scene load_steps=88 format=3 uid="uid://bistsqyi8uy0o"]
 
 [ext_resource type="Script" uid="uid://bndpx1xcb5a2y" path="res://scripts/player.gd" id="1_ugqh6"]
 [ext_resource type="Texture2D" uid="uid://eqmnimbjpfvv" path="res://art_animation/characters/player.png" id="2_cgyxa"]
@@ -12,7 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://cwasu1ajrrjv" path="res://sound/retrohurt2.mp3" id="10_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://kvjf4ln2oes5" path="res://image/heart_pixel.png" id="11_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://c0jdfj3cav2on" path="res://Hotbar/hotbar.tscn" id="12_3v2ag"]
-[ext_resource type="Texture2D" uid="uid://cstgqdgrakf5w" path="res://image/helmet_black.png" id="13_jej6c"]
+[ext_resource type="PackedScene" uid="uid://boedbuwvwkfv2" path="res://scenes/shop.tscn" id="13_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://csruhv6rfc7lb" path="res://image/armor/helmet/copper_helmet.png" id="15_oprun"]
+[ext_resource type="Texture2D" uid="uid://de7pajksdl5yt" path="res://image/armor/helmet/iron_helmet.png" id="15_qfm1y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y4r1p"]
 font = ExtResource("4_ur7pv")
@@ -675,13 +677,22 @@ offset_top = 5.0
 offset_right = 10.0
 offset_bottom = 5.0
 
+[node name="Shop" parent="." instance=ExtResource("13_f1ej7")]
+visible = false
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="IronHelmet" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(-4, 203)
+scale = Vector2(1, 1)
+texture = ExtResource("15_qfm1y")
 
 [node name="HelmetBlack" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(17.6953, 222.742)
-scale = Vector2(1.78809, 1.90723)
-texture = ExtResource("13_jej6c")
+position = Vector2(16.5313, 222.594)
+scale = Vector2(0.053875, 0.037625)
+texture = ExtResource("15_oprun")
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

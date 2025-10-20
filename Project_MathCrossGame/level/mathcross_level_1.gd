@@ -138,14 +138,12 @@ func use_coin_fix() -> bool:
 		print("❌ ไม่มี coin_fix ให้ใช้")
 		return false
 
-
-
 func _on_grid_button_pressed(row, col, btn): 
 	# ถ้าวางเลขลงไป
 	if selected_number != null and grid[current_grid_index][row][col] == null:
 		grid[current_grid_index][row][col] = selected_number
 		btn.text = str(selected_number)
-
+		
 		choices[current_grid_index].erase(selected_number)
 		set_up_choices()
 

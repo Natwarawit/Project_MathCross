@@ -879,7 +879,6 @@ scale = Vector2(0.0170739, 0.0119417)
 
 [node name="CollisionShape!2D" type="CollisionShape2D" parent="portal/portal_area"]
 position = Vector2(-45.7109, 53.0315)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7iits")
 
 [node name="player" parent="." instance=ExtResource("2_go8oh")]
