@@ -1,0 +1,210 @@
+[gd_scene load_steps=9 format=3 uid="uid://hjk2udb7jnn"]
+
+[sub_resource type="Theme" id="Theme_lubop"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_087wt"]
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxne6"]
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvixo"]
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cog3e"]
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fx52v"]
+font_size = 20
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2hypt"]
+font_size = 20
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lqfxs"]
+font_size = 15
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[node name="EasyMode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Background8Bit" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(574, 331)
+
+[node name="BackgroundGame" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(574, 331)
+
+[node name="storylabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 809.0
+offset_top = 69.0
+offset_right = 1130.0
+offset_bottom = 516.0
+
+[node name="ChoiceContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.13
+offset_left = 370.0
+offset_top = 529.0
+offset_right = 786.0
+offset_bottom = 494.76
+theme = SubResource("Theme_lubop")
+
+[node name="GridButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="PowerUpButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ChoiceButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="NextGridButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 209.0
+offset_right = 1112.0
+offset_bottom = 276.0
+
+[node name="Label" type="Label" parent="NextGridButton"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 96.0
+offset_bottom = 55.0
+text = "NEXT"
+label_settings = SubResource("LabelSettings_087wt")
+
+[node name="HintButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 74.0
+offset_top = 106.0
+offset_right = 178.0
+offset_bottom = 174.0
+
+[node name="Label" type="Label" parent="HintButton"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 96.0
+offset_bottom = 55.0
+text = "HINT"
+label_settings = SubResource("LabelSettings_oxne6")
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_top = 575.0
+offset_right = 117.0
+offset_bottom = 641.0
+
+[node name="Label" type="Label" parent="BackButton"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 22.0
+offset_right = 95.0
+offset_bottom = 55.0
+text = "BACK"
+label_settings = SubResource("LabelSettings_lvixo")
+
+[node name="FreezeTime" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 60.0
+offset_top = 199.0
+offset_right = 192.0
+offset_bottom = 264.0
+
+[node name="Label" type="Label" parent="FreezeTime"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 22.0
+offset_right = 95.0
+offset_bottom = 55.0
+text = "FREEZE"
+label_settings = SubResource("LabelSettings_cog3e")
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 572.0
+offset_top = 26.0
+offset_right = 892.0
+offset_bottom = 86.0
+text = "Time Remain : 60"
+label_settings = SubResource("LabelSettings_fx52v")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 336.0
+offset_top = 26.0
+offset_right = 516.0
+offset_bottom = 79.0
+text = "Easy Mode"
+label_settings = SubResource("LabelSettings_2hypt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SettingButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 585.0
+offset_right = 1129.0
+offset_bottom = 635.0
+
+[node name="Label" type="Label" parent="SettingButton"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 16.0
+offset_right = 133.0
+offset_bottom = 49.0
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_lqfxs")
+
+[connection signal="pressed" from="GridButton" to="." method="_on_grid_button_pressed"]
+[connection signal="pressed" from="PowerUpButton" to="." method="_on_power_up_button_pressed"]
+[connection signal="pressed" from="ChoiceButton" to="." method="_on_choice_button_pressed"]
+[connection signal="pressed" from="NextGridButton" to="." method="switch_to_next_grid"]
+[connection signal="pressed" from="HintButton" to="." method="_on_hint_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="FreezeTime" to="." method="_on_freeze_time_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]

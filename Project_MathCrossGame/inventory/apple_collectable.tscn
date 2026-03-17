@@ -1,6 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjympy6anmaeu"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://c4nq7fn3y4veu" path="res://scripts/apple_collectable.gd" id="1_1d6mu"]
+=======
+[ext_resource type="Script" uid="uid://c4nq7fn3y4veu" path="res://gd/apple_collectable.gd" id="1_1d6mu"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 [ext_resource type="Texture2D" uid="uid://dnedcrn32dag5" path="res://art_animation/picture/apple-icon.png" id="2_lejwh"]
 [ext_resource type="Resource" uid="uid://cdkl1b55o8h8d" path="res://inventory/items/apple_.tres" id="2_tw2cw"]
 

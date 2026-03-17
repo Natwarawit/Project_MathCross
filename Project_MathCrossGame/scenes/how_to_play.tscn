@@ -222,6 +222,9 @@ label_settings = SubResource("LabelSettings_p0jrq")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_wi5qh")
+<<<<<<< HEAD
 volume_db = -30.0
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,15 @@
 [gd_scene load_steps=26 format=3 uid="uid://s4e1tsvgk2se"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://barctdkc58080" path="res://scripts/Main.gd" id="1_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://kruwy10cha6q" path="res://image/Screenshot 2025-03-26 233145.png" id="3_choun"]
 [ext_resource type="Texture2D" uid="uid://cvk2311e25xn7" path="res://image/mathcrosslogo-removebg-preview.png" id="3_o6xl0"]
+=======
+[ext_resource type="Script" uid="uid://barctdkc58080" path="res://gd/Main.gd" id="1_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://kruwy10cha6q" path="res://image/Screenshot 2025-03-26 233145.png" id="3_choun"]
+[ext_resource type="Texture2D" uid="uid://cvk2311e25xn7" path="res://image/mathcrosslogo-removebg-preview.png" id="3_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dmifdsp2tvvth" path="res://image/background.png" id="3_tipki"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 [ext_resource type="FontFile" uid="uid://cmabas1nbtgcr" path="res://font/PressStart2P.ttf" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://b5m7rhfvsb8pn" path="res://scenes/Setting.tscn" id="5_85g3d"]
 [ext_resource type="Texture2D" uid="uid://dtan6l8e8bdcc" path="res://image/GUI.png" id="6_85g3d"]
@@ -14,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://xpore1cu3d3e" path="res://sound/Button Click - Sound Effect (mp3cut.net).mp3" id="12_a8y0u"]
 [ext_resource type="AudioStream" uid="uid://d1entbe3jamqo" path="res://sound/Press-X-Twice.mp3" id="13_jkv2x"]
 
+<<<<<<< HEAD
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_trceg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8y0u"]
@@ -29,6 +37,21 @@ texture = ExtResource("6_85g3d")
 region_rect = Rect2(113, 113, 30, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muem4"]
+=======
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ya4ey"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(145, 98, 46, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85g3d"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(113, 98, 30, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eb6dy"]
+texture = ExtResource("6_85g3d")
+region_rect = Rect2(113, 113, 30, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_choun"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 texture = ExtResource("6_85g3d")
 region_rect = Rect2(113, 81, 30, 14)
 
@@ -53,10 +76,17 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("4_tipki")
+<<<<<<< HEAD
 Button/styles/disabled = SubResource("StyleBoxTexture_a8y0u")
 Button/styles/focus = SubResource("StyleBoxTexture_jkv2x")
 Button/styles/hover = SubResource("StyleBoxTexture_jbj1t")
 Button/styles/normal = SubResource("StyleBoxTexture_muem4")
+=======
+Button/styles/disabled = SubResource("StyleBoxTexture_ya4ey")
+Button/styles/focus = SubResource("StyleBoxTexture_85g3d")
+Button/styles/hover = SubResource("StyleBoxTexture_eb6dy")
+Button/styles/normal = SubResource("StyleBoxTexture_choun")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 Button/styles/pressed = null
 
 [sub_resource type="LabelSettings" id="LabelSettings_jiku5"]
@@ -140,7 +170,11 @@ script = ExtResource("1_tbgi4")
 visible = false
 position = Vector2(630.476, 342.143)
 scale = Vector2(0.657407, 0.657407)
+<<<<<<< HEAD
 texture = SubResource("CompressedTexture2D_trceg")
+=======
+texture = ExtResource("3_tipki")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [node name="Screenshot2025-03-26233145" type="Sprite2D" parent="."]
 position = Vector2(638.607, 340)
@@ -324,11 +358,19 @@ offset_top = 1.0
 offset_right = 6.0
 
 [node name="Screenshot2025-03-23025113" type="Sprite2D" parent="."]
+<<<<<<< HEAD
+=======
+visible = false
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 position = Vector2(625.195, 347.829)
 scale = Vector2(1.38683, 1.38683)
 texture = ExtResource("6_tefeu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+<<<<<<< HEAD
+=======
+visible = false
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 offset_right = 1246.0
 offset_bottom = 697.0
 color = Color(0, 0, 0, 0)

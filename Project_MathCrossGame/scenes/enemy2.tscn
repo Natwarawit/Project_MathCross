@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 [gd_scene load_steps=25 format=3 uid="uid://m77jjvv57cf3"]
 
 [ext_resource type="Script" uid="uid://bipylikqpokhh" path="res://scripts/enemy_2.gd" id="1_mhmjl"]
 [ext_resource type="Texture2D" uid="uid://cbt1tpv4fjx86" path="res://Cute_Fantasy_Free/Enemies/Slime.png" id="2_23kvp"]
 [ext_resource type="PackedScene" uid="uid://dfxcpx5ol0nl0" path="res://scenes/coin_fix_answer_collectable.tscn" id="4_23kvp"]
+=======
+[gd_scene load_steps=24 format=3 uid="uid://m77jjvv57cf3"]
+
+[ext_resource type="Script" uid="uid://bipylikqpokhh" path="res://scripts/enemy_2.gd" id="1_mhmjl"]
+[ext_resource type="Texture2D" uid="uid://cbt1tpv4fjx86" path="res://Cute_Fantasy_Free/Enemies/Slime.png" id="2_23kvp"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 [ext_resource type="PackedScene" uid="uid://bugopylbn3g64" path="res://scenes/coin_collectable.tscn" id="4_thqno"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4e2ig"]
@@ -148,6 +155,10 @@ sprite_frames = SubResource("SpriteFrames_ofhr4")
 animation = &"death"
 
 [node name="detection_area" type="Area2D" parent="."]
+<<<<<<< HEAD
+=======
+visible = false
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 collision_layer = 2
 collision_mask = 2
 
@@ -179,12 +190,18 @@ show_percentage = false
 [node name="coin_collectable" parent="." instance=ExtResource("4_thqno")]
 visible = false
 
+<<<<<<< HEAD
 [node name="coin_fix_answer_collectable" parent="." instance=ExtResource("4_23kvp")]
 visible = false
 
 [node name="collect_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collect_area"]
+=======
+[node name="coin_collect_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin_collect_area"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 visible = false
 shape = SubResource("CircleShape2D_5uy6h")
 
@@ -193,4 +210,8 @@ shape = SubResource("CircleShape2D_5uy6h")
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
+<<<<<<< HEAD
 [connection signal="body_entered" from="collect_area" to="." method="_on_coin_collect_area_body_entered"]
+=======
+[connection signal="body_entered" from="coin_collect_area" to="." method="_on_coin_collect_area_body_entered"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

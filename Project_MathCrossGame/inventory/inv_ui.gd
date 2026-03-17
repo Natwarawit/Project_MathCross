@@ -10,7 +10,12 @@ extends CanvasLayer
 # === GAME / UI REFERENCES ===
 @onready var choices_container = $Inv_UI/ChoiceContainer
 @onready var game = $tutorialgame
+<<<<<<< HEAD
 @onready var level1 = get_node("../../mathcross")
+=======
+#@onready var level1 = $"../../mathcross_level1"
+@onready var level1 = get_node("../../mathcross_level1")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 # === STATE VARIABLES ===
 var choices = []
@@ -95,7 +100,11 @@ func _on_slot_clicked_main(number: int):
 		return
 
 	# ตรวจว่าตารางมีตัวเลขนี้ในตัวเลือกปัจจุบันไหม
+<<<<<<< HEAD
 	if level1.choices[0].has(number):
+=======
+	if level1.choices[level1.current_grid_index].has(number):
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 		level1.select_choice(number)
 		print("✅ MathCross เลือกเลข:", number)
 
@@ -107,6 +116,11 @@ func _on_slot_clicked_main(number: int):
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 func _on_slot_clicked_misc(number: int):
 	print("Inventory ของทั่วไป คลิก:", number)
 	# เช่น ใช้กิน apple หรือใช้ coin ในเกมได้
@@ -123,18 +137,25 @@ func check_tracked_items():
 
 func has_item_in_inventory_main(item_name: String) -> bool:
 	for invslot in inv_main.slots:
+<<<<<<< HEAD
 		if invslot == null:
 			continue
 
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 		if invslot.item != null and invslot.item.name == item_name:
 			return true
 	return false
 	
 func has_item_in_inventory_misc(item_name: String) -> bool:
+<<<<<<< HEAD
 	for invslot in inv_misc.slots:
 		if invslot == null:
 			continue
 
+=======
+	for invslot in inv_main.slots:
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 		if invslot.item != null and invslot.item.name == item_name:
 			return true
 	return false
@@ -143,9 +164,12 @@ func has_item_in_inventory_misc(item_name: String) -> bool:
 func remove_choice_from_inventory(choice: int):
 	var target_name = "ปุ่มหมายเลข " + str(choice)
 	for invslot in inv_main.slots:
+<<<<<<< HEAD
 		if invslot == null:
 			continue
 
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 		if invslot.item != null and invslot.item.name == target_name:
 			if invslot.amount > 1:
 				invslot.amount -= 1
@@ -159,9 +183,12 @@ func add_choice_to_inventory(choice: int):
 	var item_name = "ปุ่มหมายเลข " + str(choice)
 	var added = false
 	for invslot in inv_main.slots:
+<<<<<<< HEAD
 		if invslot == null:
 			continue
 
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 		if invslot.item != null and invslot.item.name == item_name:
 			invslot.amount += 1
 			added = true

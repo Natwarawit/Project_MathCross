@@ -1,5 +1,6 @@
 extends Node
 
+<<<<<<< HEAD
 # ===============================
 # Player / Equipment (ของเดิม)
 # ===============================
@@ -74,3 +75,10 @@ var mission_config := {
 	"max_incorrect": 5,
 	"min_hp_percent": 75
 }
+=======
+var player_current_attack = false
+var player_has_helmet = false  # เช็คว่าผู้เล่นใส่หมวกแล้วหรือยัง
+var helmet_type = ""
+var max_health = 100
+var enemy_attacker = null
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

@@ -8,6 +8,7 @@
 light_mask = 2
 visibility_layer = 2
 layout_mode = 3
+<<<<<<< HEAD
 anchor_right = 0.997
 anchor_bottom = 1.003
 offset_left = -4.0
@@ -15,6 +16,13 @@ offset_top = 2.0
 offset_right = -0.160034
 offset_bottom = -0.160034
 scale = Vector2(0.9, 0.9)
+=======
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 script = ExtResource("1_qwfd2")
 
 [node name="GridContainer" type="GridContainer" parent="."]

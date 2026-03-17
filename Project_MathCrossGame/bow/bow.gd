@@ -1,5 +1,6 @@
 extends Node2D
 
+<<<<<<< HEAD
 # ==================================================
 # Resource
 # ==================================================
@@ -44,11 +45,23 @@ func _update_rotation():
 	look_at(get_global_mouse_position())
 	rotation_degrees = wrap(rotation_degrees, 0, 360)
 
+=======
+const ARROW = preload("res://bow/arrow.tscn")
+@onready var muzzle: Marker2D = $Marker2D
+
+func _process(delta: float) -> void:
+	# หันไปทางเมาส์ตลอดเวลา
+	look_at(get_global_mouse_position())
+	rotation_degrees = wrap(rotation_degrees, 0, 360)
+	
+	# กลับด้าน sprite ตามองศา
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	if rotation_degrees > 90 and rotation_degrees < 270:
 		scale.y = -1
 	else:
 		scale.y = 1
 
+<<<<<<< HEAD
 # ==================================================
 # Charge Visual System
 # ==================================================
@@ -141,3 +154,12 @@ func play_release_animation():
 func start_cooldown():
 	await get_tree().create_timer(SHOOT_COOLDOWN).timeout
 	can_shoot = true
+=======
+# ฟังก์ชันยิงลูกธนู เรียกจาก player.gd
+func shoot_arrow():
+	var arrow_instance = ARROW.instantiate()
+	get_tree().root.add_child(arrow_instance)
+	arrow_instance.global_position = muzzle.global_position
+	arrow_instance.rotation = rotation
+	$AudioStreamPlayer.play()
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

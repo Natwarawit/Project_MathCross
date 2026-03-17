@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=31 format=4 uid="uid://b7nhfi0tikpj0"]
 
 [ext_resource type="Script" uid="uid://ya811asfrl5i" path="res://level/level_5.gd" id="1_a2scg"]
@@ -4401,3 +4402,8 @@ visible = false
 position = Vector2(48, 61)
 scale = Vector2(0.0934744, 0.0590909)
 texture = SubResource("CompressedTexture2D_7iits")
+=======
+[gd_scene format=3 uid="uid://b7nhfi0tikpj0"]
+
+[node name="Level 5" type="Node2D"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

@@ -12,6 +12,7 @@ func _ready():
 
 func update(slot: Invslot):
 	slot_data = slot
+<<<<<<< HEAD
 
 	# 🔥 ถ้า slot เป็น null → เคลียร์ช่องทันที
 	if slot == null:
@@ -49,3 +50,23 @@ func _gui_input(event: InputEvent):
 			var num = int(slot_data.item.name.replace("ปุ่มหมายเลข ", ""))
 			emit_signal("slot_clicked", num)
 			print("คลิกที่ Panel ที่มี ปุ่มหมายเลข", num)
+=======
+	if !slot.item:
+		item_visual.visible = false
+		amount_text.visible = false
+	else:
+		item_visual.visible = true
+		item_visual.texture = slot.item.texture
+		if slot.amount > 1:
+			amount_text.visible = true
+		amount_text.text = str(slot.amount)
+
+func _gui_input(event: InputEvent):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if slot_data.item != null:
+			# ตัวอย่าง: ถ้า item.name เป็น "ปุ่มหมายเลข 1"
+			if slot_data.item.name.begins_with("ปุ่มหมายเลข "):
+				var num = int(slot_data.item.name.replace("ปุ่มหมายเลข ", ""))
+				emit_signal("slot_clicked", num)
+				print("คลิกที่ Panel ที่มี","ปุ่มหมายเลข ",num)
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

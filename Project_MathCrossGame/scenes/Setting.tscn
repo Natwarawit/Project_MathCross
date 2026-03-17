@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://b5m7rhfvsb8pn"]
 
 [ext_resource type="Script" uid="uid://d11xhnvt42pqb" path="res://scripts/Setting.gd" id="1_m26p3"]
@@ -6,31 +7,63 @@
 [ext_resource type="AudioStream" uid="uid://xpore1cu3d3e" path="res://sound/Button Click - Sound Effect (mp3cut.net).mp3" id="5_kj1qo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8d1y4"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://b5m7rhfvsb8pn"]
+
+[ext_resource type="Script" uid="uid://d11xhnvt42pqb" path="res://gd/Setting.gd" id="1_m26p3"]
+[ext_resource type="Texture2D" uid="uid://dh2r44fvv6tlh" path="res://image/Screenshot 2025-03-27 003332.png" id="2_m7anh"]
+[ext_resource type="FontFile" uid="uid://cmabas1nbtgcr" path="res://font/PressStart2P.ttf" id="3_0qk1i"]
+[ext_resource type="AudioStream" uid="uid://xpore1cu3d3e" path="res://sound/Button Click - Sound Effect (mp3cut.net).mp3" id="5_kj1qo"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="5_qw82l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8d1y4"]
+font = ExtResource("5_qw82l")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_oyecv"]
+<<<<<<< HEAD
+=======
+font = ExtResource("5_qw82l")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ug807"]
+<<<<<<< HEAD
+=======
+font = ExtResource("5_qw82l")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3unb1"]
+<<<<<<< HEAD
+=======
+font = ExtResource("5_qw82l")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cgyx7"]
+<<<<<<< HEAD
+=======
+font = ExtResource("5_qw82l")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 font_size = 50
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mmclq"]
+<<<<<<< HEAD
+=======
+font = ExtResource("5_qw82l")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 font_size = 30
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
@@ -144,10 +177,17 @@ offset_bottom = 581.0
 
 [node name="Label" type="Label" parent="Button"]
 layout_mode = 0
+<<<<<<< HEAD
 offset_left = 14.0
 offset_top = 5.0
 offset_right = 126.0
 offset_bottom = 47.0
+=======
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 125.0
+offset_bottom = 49.0
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 text = "ย้อนกลับ"
 label_settings = SubResource("LabelSettings_mmclq")
 
@@ -169,7 +209,10 @@ scale = Vector2(3, 3)
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_kj1qo")
+<<<<<<< HEAD
 volume_db = -30.0
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [connection signal="value_changed" from="Volume_Bar" to="." method="_on_volume_value_changed"]
 [connection signal="item_selected" from="Resolutions_Chioce" to="." method="_on_resolutions_item_selected"]

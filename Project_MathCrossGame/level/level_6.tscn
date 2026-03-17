@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=36 format=4 uid="uid://c2w26nldck474"]
 
 [ext_resource type="Texture2D" uid="uid://cmtk31u2km25k" path="res://tileset/tf_ashlands/2x_RMVX/tf_A1_ashlands_2.png" id="1_ljiiu"]
@@ -2886,3 +2887,8 @@ position = Vector2(713, 395)
 
 [node name="enemy8" parent="." instance=ExtResource("13_xgdtu")]
 position = Vector2(694, 579)
+=======
+[gd_scene format=3 uid="uid://c2w26nldck474"]
+
+[node name="Level 6" type="Node2D"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

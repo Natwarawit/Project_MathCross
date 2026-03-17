@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=73 format=3 uid="uid://b38lrnj4r73gp"]
 
 [ext_resource type="Script" uid="uid://d4j432lctsm0o" path="res://scripts/loading.gd" id="1_ir5ef"]
@@ -5,11 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://dtan6l8e8bdcc" path="res://image/GUI.png" id="3_101rs"]
 [ext_resource type="Texture2D" uid="uid://eqmnimbjpfvv" path="res://art_animation/characters/player.png" id="4_yt702"]
 [ext_resource type="Texture2D" uid="uid://b7d0v1lwoj8f4" path="res://art_animation/skill_player_3.png" id="5_2ytni"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://b38lrnj4r73gp"]
+
+[ext_resource type="Script" uid="uid://d4j432lctsm0o" path="res://scripts/loading.gd" id="1_ir5ef"]
+[ext_resource type="Texture2D" uid="uid://bv8bi42g6pgns" path="res://image/output.jpg" id="2_101rs"]
+[ext_resource type="Texture2D" uid="uid://dtan6l8e8bdcc" path="res://image/GUI.png" id="3_101rs"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="3_dhqfv"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhqfv"]
 texture = ExtResource("3_101rs")
 region_rect = Rect2(135, 20, 52, 7)
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_205t2"]
 atlas = ExtResource("4_yt702")
 region = Rect2(0, 384, 48, 48)
@@ -533,6 +543,8 @@ animations = [{
 "speed": 5.0
 }]
 
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 [node name="loading" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -545,6 +557,7 @@ grow_vertical = 2
 scale = Vector2(0.36, 0.36)
 script = ExtResource("1_ir5ef")
 
+<<<<<<< HEAD
 [node name="BackgroundGame" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = -525.0
@@ -568,3 +581,19 @@ position = Vector2(2008.33, 577.778)
 scale = Vector2(16.5405, 16.5313)
 sprite_frames = SubResource("SpriteFrames_nxo4k")
 animation = &"skill_attack"
+=======
+[node name="BackgroundGame" type="Sprite2D" parent="."]
+position = Vector2(2347.22, 566.667)
+scale = Vector2(25.5425, 18.731)
+texture = ExtResource("2_101rs")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 1191.67
+offset_top = 1052.78
+offset_right = 2725.67
+offset_bottom = 1323.78
+theme_override_fonts/font = ExtResource("3_dhqfv")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/background = SubResource("StyleBoxTexture_dhqfv")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

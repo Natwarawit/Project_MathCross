@@ -4,12 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://c1jn1pfrgs53n" path="res://art_animation/picture/inventory-background.png" id="2_phfsi"]
 [ext_resource type="PackedScene" uid="uid://cwtasavct48x6" path="res://inventory/inv_ui_slot.tscn" id="3_xpkj3"]
 [ext_resource type="PackedScene" uid="uid://duxhmbil21ruw" path="res://scenes/tutorialgame!.tscn" id="4_r1b7r"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bmvsywjqs64lu" path="res://level/mathcross.tscn" id="5_ars6i"]
 
 [node name="Inv_UI" type="CanvasLayer"]
 offset = Vector2(-30, 50)
 scale = Vector2(1.00289, 1)
 transform = Transform2D(1.00289, 0, 0, 1, -30, 50)
+=======
+[ext_resource type="PackedScene" uid="uid://bmvsywjqs64lu" path="res://level/mathcross_level1.tscn" id="5_ars6i"]
+
+[node name="Inv_UI" type="CanvasLayer"]
+scale = Vector2(1.00289, 1)
+transform = Transform2D(1.00289, 0, 0, 1, 0, 0)
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 script = ExtResource("1_6mjb6")
 
 [node name="Inv_UI" type="Control" parent="."]
@@ -19,7 +27,10 @@ offset_left = 335.032
 offset_top = 3.0
 offset_right = 375.032
 offset_bottom = 43.0
+<<<<<<< HEAD
 scale = Vector2(1.2, 1.2)
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Inv_UI"]
 layout_mode = 0
@@ -83,7 +94,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="Inv_UI"]
+<<<<<<< HEAD
 visible = false
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 layout_mode = 0
 offset_top = 66.0
 offset_right = 87.0

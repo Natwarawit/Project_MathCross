@@ -31,4 +31,8 @@ func _process(delta):
 
 	# --- ตรวจสอบการกด F เพื่อเปิดหน้าต่าง ---
 	if can_interact and Input.is_action_just_pressed("F"):
+<<<<<<< HEAD
 		$"../mathcross".visible = true
+=======
+		$"../mathcross_level1".visible = true
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 extends CharacterBody2D 
 
 signal died
@@ -58,10 +59,24 @@ var enemy_attack_cooldown = true
 var player_alive = true
 var sword_attack_ip = false
 var skill_attack_ip = false
+=======
+extends CharacterBody2D
+
+const speed = 80
+var health = 100
+var attack = 30
+var def = 0
+var current_dir = "none"
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+var player_alive = true
+var attack_ip = false
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 var skill_cooldown_time = 5
 var skill_cooldown_timer = 0
 var can_use_skill = true
 
+<<<<<<< HEAD
 # -------- Skill Damage Boost --------
 var skill_damage_multiplier := 2.0
 var skill_active := false
@@ -109,6 +124,20 @@ func _ready():
 	if not dash_ghost_timer.timeout.is_connected(_on_dash_ghost_timer_timeout):
 		dash_ghost_timer.timeout.connect(_on_dash_ghost_timer_timeout)
 	
+=======
+
+@export var inv: Inv   # ต้องลาก Inv node ใน Inspector มาตรงนี้
+@onready var head = $CanvasLayer/HelmetBlack
+
+# -------- อาวุธ --------
+var using_bow: bool = false   # เริ่มยังไม่ถือธนู
+
+func _ready():
+	health = global.max_health
+	$AnimatedSprite2D.play("front_idle")
+	$Bow.visible = using_bow
+	
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	# แสดงหมวกถ้า global บอกว่าเคยซื้อ
 	print("Helmet type from global: ", global.helmet_type)  # ตรวจสอบค่า
 	if global.player_has_helmet:
@@ -117,15 +146,33 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
+<<<<<<< HEAD
 	#enemy_attack()   # 🔥 เปิดการโจมตีศัตรู
+=======
+	enemy_attack()
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	eatapple()
 	update_health()
 	handle_combat()
 	skill()
 	
 	if health <= 0:
+<<<<<<< HEAD
 		player_died()
 		
+=======
+		player_alive = false 
+		health = 0
+		print("player has been killed")
+		$AnimatedSprite2D.play("death")
+		$Label.text = "YOU DEATH"
+
+		for enemy in get_tree().get_nodes_in_group("enemies"):
+			enemy.player_is_dead = true
+
+		await get_tree().create_timer(3).timeout
+		self.queue_free()
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	
 	if not can_use_skill:
 		skill_cooldown_timer -= delta
@@ -134,12 +181,19 @@ func _physics_process(delta):
 		
 		# แสดงข้อความเฉพาะตอนที่ cooldown > 0
 		if cooldown > 0:
+<<<<<<< HEAD
 			#$Label.text = "Skill Cooldown " + str(cooldown)
 			pass
+=======
+			$Label.text = "Skill Cooldown " + str(cooldown)
+		else:
+			$Label.text = ""  # เคลียร์ข้อความ
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 		if skill_cooldown_timer <= 0:
 			can_use_skill = true
 
+<<<<<<< HEAD
 # -------- การเคลื่อนไหว --------
 func player_movement(delta):
 	if sword_attack_ip or skill_attack_ip:
@@ -147,6 +201,12 @@ func player_movement(delta):
 		move_and_slide()
 		return
 
+=======
+
+
+# -------- การเคลื่อนไหว --------
+func player_movement(delta):
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	if Input.is_action_pressed("d"):
 		current_dir = "right"
 		play_anim(1)
@@ -169,8 +229,14 @@ func player_movement(delta):
 		velocity.x = 0
 	else:
 		play_anim(0)
+<<<<<<< HEAD
 		velocity = Vector2.ZERO
 
+=======
+		velocity.x = 0
+		velocity.y = 0
+	
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	move_and_slide()
 
 func play_anim(movement):
@@ -181,38 +247,59 @@ func play_anim(movement):
 		anim.flip_h = false
 		if movement == 1:
 			anim.play("side_walk")
+<<<<<<< HEAD
 		elif movement == 0 and not sword_attack_ip and not skill_attack_ip:
+=======
+		elif movement == 0 and not attack_ip:
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 			anim.play("side_idle")
 
 	if dir == "left":
 		anim.flip_h = true
 		if movement == 1:
 			anim.play("side_walk")
+<<<<<<< HEAD
 		elif movement == 0 and not sword_attack_ip and not skill_attack_ip:
+=======
+		elif movement == 0 and not attack_ip:
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 			anim.play("side_idle")
 
 	if dir == "down":
 		anim.flip_h = true
 		if movement == 1:
 			anim.play("front_walk")
+<<<<<<< HEAD
 		elif movement == 0 and not sword_attack_ip and not skill_attack_ip:
+=======
+		elif movement == 0 and not attack_ip:
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 			anim.play("front_idle")
 
 	if dir == "up":
 		anim.flip_h = true
 		if movement == 1:
 			anim.play("back_walk")
+<<<<<<< HEAD
 		elif movement == 0 and not sword_attack_ip and not skill_attack_ip:
+=======
+		elif movement == 0 and not attack_ip:
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 			anim.play("back_idle")
 
 # -------- ต่อสู้ --------
 func handle_combat():
 	# สลับอาวุธ
+<<<<<<< HEAD
 	if Input.is_action_just_pressed("switch_weapon"):
+=======
+	if Input.is_action_just_pressed("switch_weapon"): # R
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 		using_bow = !using_bow
 		$Bow.visible = using_bow
 		print("Now using bow:", using_bow)
 
+<<<<<<< HEAD
 		# โจมตีด้วยดาบ (เฉพาะตอนมีศัตรูในระยะ)
 	if not using_bow and Input.is_action_just_pressed("attack"):
 		if enemy_in_range():
@@ -260,6 +347,21 @@ func sword_attack():
 
 	global.player_current_attack = true
 	sword_attack_ip = true
+=======
+	# โจมตีด้วยดาบ
+	if not using_bow and Input.is_action_just_pressed("attack"):
+		sword_attack()
+
+	# ยิงธนู
+	if using_bow and Input.is_action_just_pressed("shoot"):
+		$Bow.shoot_arrow()
+
+func sword_attack():
+	var dir = current_dir
+	$soundattack.play()
+	global.player_current_attack = true
+	attack_ip = true
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 	match dir:
 		"right":
@@ -275,6 +377,7 @@ func sword_attack():
 
 	$deal_attack_timer.start()
 
+<<<<<<< HEAD
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 
@@ -302,6 +405,21 @@ func _on_player_hitbox_body_exited(body):
 	if body.is_in_group("enemies"):
 		enemy_inattack_range = false
 		enemy_attacker = null
+=======
+func _on_deal_attack_timer_timeout():
+	$deal_attack_timer.stop()
+	global.player_current_attack = false
+	attack_ip = false
+
+# -------- ศัตรูโจมตี --------
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
+
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 
 func flash_red():
@@ -309,6 +427,7 @@ func flash_red():
 	sprite.modulate = Color(1, 0, 0)
 	await get_tree().create_timer(0.2).timeout
 	sprite.modulate = Color(1, 1, 1)
+<<<<<<< HEAD
 	
 func take_damage(damage):
 
@@ -417,6 +536,23 @@ func player_died():
 	$gameover.visible = true
 	hide()
 	set_process_input(false)
+=======
+
+
+func enemy_attack():
+	if enemy_inattack_range and enemy_attack_cooldown:
+		var damage = 0
+		if global.enemy_attacker != null:
+			var enemy_attack = global.enemy_attacker.attack
+			damage = enemy_attack - def
+
+		flash_red()
+		health -= damage
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print("Player ถูกตี! damage =", damage, " HP เหลือ =", health)
+		$hurt.play()
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 func _on_attack_cooldown_timeout():
 	enemy_attack_cooldown = true
@@ -424,6 +560,7 @@ func _on_attack_cooldown_timeout():
 # -------- สกิล --------
 func skill():
 	if Input.is_action_just_pressed("E"):
+<<<<<<< HEAD
 		if not can_use_skill:
 			return
 
@@ -506,10 +643,33 @@ func update_coin_ui():
 	# --- apple ---
 	if has_node("status/coin4"):
 		$status/coin4.text = str(get_item_count("apple_"))
+=======
+		if can_use_skill:
+			global.player_current_attack = true
+			attack_ip = true
+
+			match current_dir:
+				"right", "left":
+					$AnimatedSprite2D.play("skill_attack")
+				"down":
+					$AnimatedSprite2D.play("front_skill_attack")
+				"up":
+					$AnimatedSprite2D.play("back_skill_attack")
+
+			$deal_attack_timer.start()
+			can_use_skill = false
+			skill_cooldown_timer = skill_cooldown_time
+			$soundattack.play()
+			await get_tree().create_timer(0.2).timeout
+			$soundattack.play()
+		else:
+			$Label.text = "Skill Cooldown"
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 # -------- Health Bar --------
 func update_health(): 
 	# ตรวจสอบให้ค่าพลังชีวิตไม่เกิน max_health
+<<<<<<< HEAD
 	var clamped_health = min(health, max_health)
 
 	# อัปเดตค่าแถบเลือดและแสดงผล
@@ -518,6 +678,15 @@ func update_health():
 	$healthbarcanvas/Label2.text = str(clamped_health) + "/" + str(max_health)
 	healthbar.max_value = max_health
 	healthbar.value = clamped_health
+=======
+	var clamped_health = min(health, global.max_health)
+
+	# อัปเดตค่าแถบเลือดและแสดงผล
+	var healthbar = $healthbarcanvas/healthbar
+	$healthbarcanvas/Label2.text = str(clamped_health) + "/" + str(global.max_health)
+	healthbar.value = clamped_health
+	healthbar.max_value = global.max_health  # ใช้ค่า clamped_health ในการอัปเดตแถบเลือด
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	healthbar.visible = true
 	
 # -------- Item / Apple --------
@@ -530,13 +699,18 @@ func collect(item):
 		print("ERROR: Inv_UI not found")
 		return
 
+<<<<<<< HEAD
 	# แยกประเภท itemก
+=======
+	# แยกประเภท item
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 	if item.name.begins_with("ปุ่มหมายเลข "):
 		$Inv_UI.inv_main.insert(item)
 		print("เก็บเข้า inv_main (ตัวเลข)")
 	else:
 		$Inv_UI.inv_misc.insert(item)
 		print("เก็บเข้า inv_misc (coin/apple/fixcoin)")
+<<<<<<< HEAD
 		
 	update_coin_ui() # 🪙 อัปเดต coin ทุกครั้งที่เก็บของ
 
@@ -557,6 +731,10 @@ func consume_coin(amount: int) -> bool:
 				return true
 	return false
 	
+=======
+
+
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 func eatapple():
 	if Input.is_action_just_pressed("Q"): 
 		eat()
@@ -576,6 +754,7 @@ func eat():
 			break
 
 	if apple_count > 0:
+<<<<<<< HEAD
 		inv_ui.set_item_count_misc("apple_", apple_count - 1)
 
 		health = min(max_health, health + 20)
@@ -976,3 +1155,54 @@ func load_equipment_from_global():
 	if global.sword_index > 0:
 		var sword_list = ["ดาบระดับ 1","ดาบระดับ 2","ดาบระดับ 3"]
 		sword_show(sword_list[global.sword_index - 1])
+=======
+		# ลดจำนวนแอปเปิ้ลลง 1
+		inv_ui.set_item_count_misc("apple_", apple_count - 1)
+
+		# ฟื้นพลังชีวิต (สูงสุด 100)
+		health = min(global.max_health, health + 20)
+		print("🍎 คุณกินแอปเปิ้ลแล้ว! พลังชีวิตเพิ่มขึ้นเป็น:", health)
+
+		# ถ้าใช้หมดแล้ว ลบ item ออกจาก inventory
+		if apple_count - 1 <= 0:
+			inv_ui.remove_item_from_inventory_misc("apple_")
+	else:
+		print("❌ ไม่มีแอปเปิ้ลใน inventory")
+
+func helmet_show(helmet_type: String): 
+	if head != null:
+		head.visible = true
+		
+		# ตรวจสอบประเภทของหมวกและอัปเดตค่าพลังชีวิตสูงสุด
+		match helmet_type:
+			"หมวกทองแดง":
+				global.max_health = 150  # เปลี่ยนค่าพลังชีวิตสูงสุดเป็น 150
+				global.helmet_type = "หมวกทองแดง"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/copper_helmet.png")
+			"หมวกเหล็ก":
+				global.max_health = 200  # เปลี่ยนค่าพลังชีวิตสูงสุดเป็น 200
+				global.helmet_type = "หมวกเหล็ก"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/iron_helmet.png")
+			"หมวกทอง":
+				global.max_health = 250  # เปลี่ยนค่าพลังชีวิตสูงสุดเป็น 250
+				global.helmet_type = "หมวกทอง"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/gold_helmet.png")
+			"หมวกเพชร":
+				global.max_health = 300 
+				global.helmet_type = "หมวกเพชร"
+				$CanvasLayer/HelmetBlack.texture = preload("res://image/armor/helmet/diamond_helmet.png")
+			_:
+				print("ประเภทหมวกไม่ถูกต้อง")
+
+		# รีเซ็ต health ให้ไม่เกิน max_health ใหม่
+		health = min(health, global.max_health)  
+		
+		# อัปเดตการแสดงผลพลังชีวิต
+		update_health()
+		
+		print("หมวก " + helmet_type + " ถูกสวมใส่! พลังชีวิตสูงสุดเพิ่มขึ้นเป็น ", global.max_health)
+	else:
+		print("❌ HelmetBlack node ไม่พบ")
+func player():
+	pass
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

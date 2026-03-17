@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 [gd_scene load_steps=26 format=3 uid="uid://fpule8qukwlu"]
+=======
+[gd_scene load_steps=25 format=3 uid="uid://fpule8qukwlu"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [ext_resource type="Script" uid="uid://c5oovxkfao57n" path="res://scripts/enemy_3.gd" id="1_o2iik"]
 [ext_resource type="Texture2D" uid="uid://dae2gi5ri3usy" path="res://Cute_Fantasy_Free/Enemies/Skeleton.png" id="2_kroph"]
 [ext_resource type="PackedScene" uid="uid://bugopylbn3g64" path="res://scenes/coin_collectable.tscn" id="3_xx6g3"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dfxcpx5ol0nl0" path="res://scenes/coin_fix_answer_collectable.tscn" id="4_kroph"]
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xx6g3"]
 atlas = ExtResource("2_kroph")
@@ -136,7 +143,11 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lxes2"]
+<<<<<<< HEAD
 radius = 67.0671
+=======
+radius = 266.008
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_magwu"]
 radius = 4.0
@@ -147,8 +158,12 @@ radius = 13.0384
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
 radius = 374.021
 
+<<<<<<< HEAD
 [node name="enemy3" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
+=======
+[node name="enemy3" type="CharacterBody2D" groups=["enemy"]]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 script = ExtResource("1_o2iik")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -156,6 +171,10 @@ sprite_frames = SubResource("SpriteFrames_ofhr4")
 animation = &"idle"
 
 [node name="detection_area" type="Area2D" parent="."]
+<<<<<<< HEAD
+=======
+visible = false
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 collision_layer = 2
 collision_mask = 2
 
@@ -187,12 +206,18 @@ show_percentage = false
 [node name="coin_collectable" parent="." instance=ExtResource("3_xx6g3")]
 visible = false
 
+<<<<<<< HEAD
 [node name="coin_fix_answer_collectable" parent="." instance=ExtResource("4_kroph")]
 visible = false
 
 [node name="collect_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collect_area"]
+=======
+[node name="coin_collect_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coin_collect_area"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 visible = false
 shape = SubResource("CircleShape2D_5uy6h")
 
@@ -201,4 +226,8 @@ shape = SubResource("CircleShape2D_5uy6h")
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
 [connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
+<<<<<<< HEAD
 [connection signal="body_entered" from="collect_area" to="." method="_on_coin_collect_area_body_entered"]
+=======
+[connection signal="body_entered" from="coin_collect_area" to="." method="_on_coin_collect_area_body_entered"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

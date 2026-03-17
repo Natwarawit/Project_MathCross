@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=55 format=4 uid="uid://nqm85v0yplgk"]
 
 [ext_resource type="Texture2D" uid="uid://cf5ejfiy5648o" path="res://tileset/Free-Undead-Tileset-Top-Down-Pixel-Art/PNG/Ground_rocks.png" id="1_gt5pd"]
@@ -6547,3 +6548,8 @@ position = Vector2(541, 623)
 
 [node name="enemy5" parent="." instance=ExtResource("15_ymtmr")]
 position = Vector2(395, 685)
+=======
+[gd_scene format=3 uid="uid://nqm85v0yplgk"]
+
+[node name="Level 7 Boss" type="Node2D"]
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9

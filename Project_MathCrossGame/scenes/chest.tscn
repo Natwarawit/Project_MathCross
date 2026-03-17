@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=15 format=3 uid="uid://d1ltbo8fwr2cf"]
 
 [ext_resource type="Script" uid="uid://ck6hg3y1f5xtd" path="res://scripts/chest.gd" id="2_gqd3d"]
@@ -10,12 +11,27 @@ radius = 14.106
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sy5e1"]
 radius = 14.4968
+=======
+[gd_scene load_steps=14 format=3 uid="uid://d1ltbo8fwr2cf"]
+
+[ext_resource type="Texture2D" uid="uid://c7460ucu0daam" path="res://art_animation/objects/chest_01.png" id="1_sy5e1"]
+[ext_resource type="Script" uid="uid://ck6hg3y1f5xtd" path="res://scripts/chest.gd" id="2_gqd3d"]
+[ext_resource type="FontFile" uid="uid://csvrf0btkmjt1" path="res://font/TA 8 bit.ttf" id="3_gqd3d"]
+[ext_resource type="AudioStream" uid="uid://h3nfaktrmg0i" path="res://sound/Retro Event Acute 08.wav" id="4_yue2o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yue2o"]
+radius = 15.3082
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sy5e1"]
+radius = 13.0384
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [sub_resource type="LabelSettings" id="LabelSettings_yue2o"]
 font = ExtResource("3_gqd3d")
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
+<<<<<<< HEAD
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhylo"]
 atlas = ExtResource("3_yue2o")
 region = Rect2(0, 0, 32, 32)
@@ -39,12 +55,37 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_yue2o"]
 atlas = ExtResource("3_yue2o")
 region = Rect2(0, 0, 32, 32)
+=======
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilhio"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqd3d"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yue2o"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhylo"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w02o5"]
+atlas = ExtResource("1_sy5e1")
+region = Rect2(48, 0, 16, 16)
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ilhio"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+<<<<<<< HEAD
 "texture": SubResource("AtlasTexture_yhylo")
+=======
+"texture": SubResource("AtlasTexture_ilhio")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 }],
 "loop": true,
 "name": &"idle",
@@ -52,6 +93,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+<<<<<<< HEAD
 "texture": SubResource("AtlasTexture_w02o5")
 }, {
 "duration": 1.0,
@@ -65,6 +107,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yue2o")
+=======
+"texture": SubResource("AtlasTexture_gqd3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yue2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhylo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w02o5")
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 }],
 "loop": false,
 "name": &"open",
@@ -87,6 +141,7 @@ shape = SubResource("CircleShape2D_yue2o")
 [node name="chest_hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chest_hitbox"]
+<<<<<<< HEAD
 position = Vector2(0.352201, -0.106667)
 shape = SubResource("CircleShape2D_sy5e1")
 
@@ -95,14 +150,31 @@ offset_left = -12.5283
 offset_top = 25.92
 offset_right = 34.4717
 offset_bottom = 51.92
+=======
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_sy5e1")
+
+[node name="Text" type="Label" parent="."]
+offset_left = -11.3207
+offset_top = 8.0
+offset_right = 35.6793
+offset_bottom = 34.0
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 scale = Vector2(0.5, 0.5)
 label_settings = SubResource("LabelSettings_yue2o")
 
 [node name="Text2" type="Label" parent="."]
+<<<<<<< HEAD
 offset_left = -13.3333
 offset_top = -38.5067
 offset_right = 39.6667
 offset_bottom = -15.5067
+=======
+offset_left = -10.5157
+offset_top = -26.56
+offset_right = 42.4843
+offset_bottom = -3.56
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 scale = Vector2(0.5, 0.5)
 label_settings = SubResource("LabelSettings_yue2o")
 
@@ -114,6 +186,7 @@ animation = &"idle"
 stream = ExtResource("4_yue2o")
 volume_db = -7.776
 
+<<<<<<< HEAD
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -7.6981
 offset_top = -29.12
@@ -121,5 +194,7 @@ offset_right = 8.3019
 offset_bottom = -13.12
 scale = Vector2(1.18442, 1.18192)
 
+=======
+>>>>>>> 4a2b1f7165990c6d3de7e8ec075bbe66b75e40b9
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
