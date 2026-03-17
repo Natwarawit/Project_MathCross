@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://w7daeyf4cysg"]
+
+[ext_resource type="Script" uid="uid://b18cghkkhvnx0" path="res://scripts/minimap.gd" id="1_o13pn"]
+[ext_resource type="Texture2D" uid="uid://si8yy50a6ltf" path="res://image/Screenshot 2026-01-04 022207.png" id="2_4v8nv"]
+
+[node name="minimap" type="CanvasLayer"]
+script = ExtResource("1_o13pn")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 61.0
+offset_bottom = 61.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(60, 60)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Screenshot2026-01-04022207" type="Sprite2D" parent="SubViewportContainer"]
+position = Vector2(30, 29)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_4v8nv")
+
+[node name="Line2D" type="Line2D" parent="SubViewportContainer"]
+points = PackedVector2Array(0, 1, 0, 59, 59, 59, 59, 0, -2, 0)
+width = 4.0

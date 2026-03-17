@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://l4n1svb3ncee"]
+
+[ext_resource type="Texture2D" uid="uid://c1jn1pfrgs53n" path="res://art_animation/picture/inventory-background.png" id="1_6f8om"]
+[ext_resource type="Texture2D" uid="uid://cisx83om0ie1y" path="res://art_animation/picture/inventory-slot.png" id="2_jdgcw"]
+
+[node name="level_information" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -203.0
+offset_bottom = -203.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory-background" type="Sprite2D" parent="."]
+position = Vector2(910, 546)
+scale = Vector2(39.25, 21.6094)
+texture = ExtResource("1_6f8om")
+
+[node name="Inventory-slot" type="Sprite2D" parent="."]
+position = Vector2(300, 552)
+scale = Vector2(30.8438, 38.3516)
+texture = ExtResource("2_jdgcw")

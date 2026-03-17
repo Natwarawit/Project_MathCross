@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1ltbo8fwr2cf"]
+
+[ext_resource type="Texture2D" uid="uid://c7460ucu0daam" path="res://art_animation/objects/chest_01.png" id="1_sy5e1"]
+[ext_resource type="Script" uid="uid://ck6hg3y1f5xtd" path="res://scripts/chest.gd" id="2_gqd3d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yue2o"]
+radius = 15.3082
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sy5e1"]
+radius = 13.0384
+
+[node name="Chest" type="Sprite2D"]
+position = Vector2(19.125, 18.25)
+scale = Vector2(2.48438, 2.34375)
+texture = ExtResource("1_sy5e1")
+hframes = 4
+script = ExtResource("2_gqd3d")
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_yue2o")
+
+[node name="chest_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest_hitbox"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_sy5e1")
+
+[node name="Text" type="Label" parent="."]
+offset_left = -12.5283
+offset_top = -21.0133
+offset_right = 40.4717
+offset_bottom = 1.98667
+scale = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="chest_hitbox" to="." method="_on_chest_hitbox_body_entered"]
+[connection signal="body_exited" from="chest_hitbox" to="." method="_on_chest_hitbox_body_exited"]

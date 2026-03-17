@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://br0y4e8ktxscy"]
+
+[ext_resource type="Script" uid="uid://cpw255ims6hda" path="res://ability/action_bar.gd" id="1_0dfs1"]
+[ext_resource type="PackedScene" uid="uid://x7d7rfru7gj5" path="res://ability/spell_button.tscn" id="2_60hvf"]
+[ext_resource type="Texture2D" uid="uid://ckde1ag5i5fav" path="res://ability/skill1.png" id="3_q4alb"]
+[ext_resource type="Texture2D" uid="uid://bq7qi3y0s2lo2" path="res://ability/dash_ability1.PNG" id="4_q4alb"]
+
+[node name="Ability" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="debug" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ActionBar" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_0dfs1")
+
+[node name="SpellButton" parent="ActionBar" instance=ExtResource("2_60hvf")]
+layout_mode = 2
+texture_normal = ExtResource("3_q4alb")
+
+[node name="SpellButton2" parent="ActionBar" instance=ExtResource("2_60hvf")]
+layout_mode = 2
+texture_normal = ExtResource("4_q4alb")
